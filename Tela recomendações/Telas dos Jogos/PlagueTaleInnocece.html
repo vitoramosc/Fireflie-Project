@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendações</title>
+    <link rel="stylesheet" href="../../src/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href=""><img src="../../src/images/logos/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
+            <ul class="nav-list" id="navlist">
+                <a href="">
+                    <li class="list">Inicio</li>
+                </a>
+                <a href="">
+                    <li class="list">Sobre o jogo</li>
+                </a>
+                <a href="">
+                    <li class="list">Recomendações</li>
+                </a>
+                <a href="">
+                    <li class="list"> <button onclick="carrossel()" id="nav-button">Login</button></li>
+                </a>
+            </ul>
+
+        </nav>
+    </header>
+    <main class="main">
+        <section class="section">
+            <div class="game-apresentation">
+                <h2 class="section-title">TRAILER</h2>
+                <div class="container">
+                    <div class="trailer">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/CtP6mNeN6yE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <ul id="carateristics-game">
+                            <li>Developer: Asobo Studio</li>
+                            <li>Genre(s): Action Adventure, General, Linear</li>
+                        </ul>
+                    </div>
+                    <div class="metacritic">
+                        <div class="metascore">
+                            <div class="logoMetascore">
+                                <p id="noteMetascore">81</p>
+                            </div>
+                            <div class="text-metacritic">
+                                <h2 class="title-metacritic">Metascore</h2>
+                            <p class="description-metacritic">Generally favorable reviews
+                                based on 61 Critic Reviews</p>
+                            </div>
+                        </div>
+                        <div class="publicScore">
+                            <div class="logopublicScore">
+                                <p id="noteMetascore">8.5</p>
+                            </div>
+                            <div class="text-metacritic">
+                                <h2 class="title-metacritic">Nota do Público</h2>
+                            <p class="description-metacritic">Generally favorable reviews
+                                based on 61 Critic Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-game">
+                <h2 class="section-title">SOBRE O JOGO</h2>
+                <div class="game-images">
+                    <div class="carrossel">
+                        <div class="container" id="img">
+                            <img src="../../src/images/banners/plagueTale1/plagueTale1.jpg" alt="foto do jogo"
+                                class="printGameplay">
+                            <img src="../../src/images/banners/plagueTale1/A5pTFPSmNYdKRTguvZAVMk.png" alt=""
+                                class="printGameplay">
+                            <img src="../../src/images/banners/plagueTale1/a-plague-tale-innocence-gameplay-reveal.jpg"
+                                alt="" class="printGameplay">
+                            <img src="../../src/images/banners/plagueTale1/A-Plague-Tale-Innocence-Gameplay-Overview-Trailer-2-924x520.jpg"
+                                alt="" class="printGameplay">
+                        </div>
+                    </div>
+                    <div class="sinopse">
+                        <h2>HISTÓRIA</h2> <br>
+                        <p>Segue o conto sombrio da jovem Amicia e do seu irmãozinho Hugo, numa viagem pelos momentos mais negros da história. Perseguidos pelos soldados da Inquisição e rodeados por enxames de ratos imparáveis, Amicia e Hugo vão aprender a confiar um no outro. À medida que se debatem para sobreviver contra probabilidades esmagadoras, lutarão para encontrar sentido neste mundo brutal e impiedoso.
+
+
+
+                            1348. A praga devasta o Reino da França. Amicia e seu irmãozinho Hugo são perseguidos pela Inquisição por vilarejos devastados pela doença. Durante a jornada, eles terão que se juntar a outras crianças e escapar de hordas de ratos usando fogo e luz. Podendo contar apenas com o vínculo que une seus destinos, eles enfrentarão horrores indescritíveis enquanto lutam para sobreviver.
+                            A aventura deles se inicia... quando a época da inocência finda.</p> 
+                    </div>
+                    <div class="Requieriments-pc">
+                        
+                    </div>
+                    <div class="game-plataforms">
+
+                    </div>
+                </div>
+            </div>
+            <div class="GameCatalogue">
+                <h2 class="section-title">VEJA MAIS</h2>
+                <div class="Cards">
+                    <a href=""><img src="../../src/images/imgs-Cards/posterPlagueTale2.jpg" alt="" class="imgCard"></a>
+                    <a href=""><img src="../../src/images/imgs-Cards/cardDetroit.jpg" alt="" class="imgCard"></a>
+                    <a href=""><img src="../../src/images/imgs-Cards/cardLis.jpg" alt="" class="imgCard"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="nav-footer">
+            <a href=""><img src="../../src/images/logos/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
+
+            <p id="footer-message">Feito com <span id="heart-footer">&#10084;</span> por <a
+                    href="https://github.com/vitoramosc">Vitor Ramos</a> </p>
+            <a href="#"><img src="../../src/images/icons/ellieSpaceship.png" alt="" id="ellie-spaceship"></a>
+
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    const imgs = document.getElementById('img');
+    const img = document.querySelectorAll("#img .printGameplay");
+
+    let idx = 0;
+
+    function carrossel() {
+        idx++;
+        if (idx > img.length - 1) {
+            idx = 0
+        }
+
+        imgs.style.transform = `translateX(${-idx * 500}px)`;
+    }
+
+    setInterval(carrossel, 3000);
+
+</script>

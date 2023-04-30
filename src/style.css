@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+body{
+    background-color: #1B1B1B;
+    max-width: 1275px;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+    
+}
+a:visited{
+    color: #FFFFFF;
+    
+}
+
+/* nav-bar */
+
+
+
+#burguer{
+    display: block;
+    background-color: #A81B1B;
+    text-align: center;
+    display: none;
+}
+
+#burguer:hover{
+    background-color: #1B1B1B;
+    cursor: pointer;
+}
+
+
+
+
+.header .nav .nav-list .list #nav-button{
+    height: 25px;
+    width: 70px;
+    background-color: #A81B1B;
+    border: 0px;
+    border-radius: 3px;
+    color: #FFFFFF;
+}
+
+.logo-nav{
+    height: 30px;
+}
+
+/* banner */
+
+.main .section{
+}
+.main .section .banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    
+}
+
+.main .section .banner #title-banner{
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 54px;
+}
+
+.main .section .GameCatalogue .imgCard{
+    height: 437.4px;
+    width: 291.64px;
+    border-radius: 15px;
+    margin-bottom: 80px;
+    
+}
+
+.main .section .GameCatalogue .imgCard :hover{
+    opacity: 50%;
+
+}
+
+.main .section .GameCatalogue .Cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 100px;
+    
+}
+
+.main .section .GameCatalogue .Cards :hover{
+    opacity: 75%;
+    
+}
+
+
+
+@media screen and (max-width : 800px) {
+    .main .section .banner{
+        background-image: url(../src/images/banners/bannerRecomendacoes.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 275px;
+        width: 100%;
+    }
+    .main .section .banner #title-banner{
+        color: #FFFFFF;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 32px;
+    }
+    .header .nav{
+        display: block;
+        justify-content: space-between;
+        margin: 20px;
+        padding: 20px;
+        background-color: #1B1B1B;
+    }
+    .header .nav .nav-list{
+        display: flex;
+        justify-content: space-around;
+        background-color: #1B1B1B;
+        color: #FFFFFF;
+        align-items: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        list-style: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+    #ellie-spaceship{
+        height: 100px;
+    }
+    .footer .nav-footer .logo-nav{
+        height: 20px;
+    }
+    
+  }
+@media screen and (min-width: 801px) {
+.main .section .banner{
+    background-image: url(../src/images/banners/bannerRecomendacoes.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;  
+}
+.header .nav .nav-list{
+    display: flex;
+    gap: 40px;
+    color: #FFFFFF;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    list-style: none;
+}
+.header .nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    background-color: #1B1B1B;
+}
+.header .nav .nav-list{
+    display: flex;
+    gap: 40px;
+    color: #FFFFFF;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    list-style: none;
+}#ellie-spaceship{
+    height: 150px;
+}
+
+}
+
+/*Game-Catalogue-Veja mais*/
+
+.section-title{
+    font-size: 46px;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    
+}
+
+.main .section .game-apresentation .container{
+    display: flex;
+    gap: 90px;
+}
+
+.main .section .game-apresentation{
+    color: #FFFFFF;
+    margin: 0 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main .section .game-apresentation #carateristics-game{
+    margin: 10px 30px;
+}
+
+.main .section .game-apresentation .container .metacritic{
+    margin-top: 30px;
+}
+
+.main .section .game-apresentation .container .metacritic .metascore{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.main .section .game-apresentation .container .metacritic .metascore .logoMetascore{
+    background-color: #65D133;
+    border-radius: 7px;
+    height: 100px;
+    width: 100px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .section .game-apresentation .container .metacritic #noteMetascore{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.main .section .game-apresentation .container .metacritic .text-metacritic{
+    width: 250px;
+}
+
+.main .section .game-apresentation .container .metacritic .text-metacritic .title-metacritic{
+        margin-bottom: 15px;
+}
+
+.main .section .game-apresentation .container .metacritic .publicScore{
+    display: flex;
+    gap: 20px;
+}
+
+.main .section .game-apresentation .container .metacritic .publicScore .logopublicScore{
+    background-color: #65D133;
+    border-radius: 100px;
+    height: 100px;
+    width: 100px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .section .about-game{
+    color: #FFFFFF;
+    margin: 0 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* .main .section .about-game .game-info{
+    display: flex;
+    height: fit-content;
+    color: #FFFFFF;
+    gap: 30px;
+    
+    
+}*/
+
+.main .section .game-info .sinopse{
+    margin-top: 50px;
+    width: 50%;
+    height: fit-content;
+    text-align: justify;
+}
+/*
+.main .section .game-info .Requieriments-pc{
+    margin-top: 50px;
+    width: 50%;
+    height: fit-content;
+    text-align: justify;
+} */
+
+
+.main .section .GameCatalogue .gameplay .fotoGameplay{
+    height: 250px;
+    
+}
+
+.main .section .game-images{
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrossel{
+    box-shadow: 2px 2px 4px black;
+    overflow: hidden;
+    height: fit-content;
+    width: 500px;
+
+    
+}
+
+.container{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+    
+}
+
+.printGameplay{
+    object-fit: cover;
+    width: 500px;
+}
+
+.main .section .sinopse{
+    padding-left: 30px;
+    color: #FFFFFF;
+    width: 500px;
+    
+}
+
+/* footer */
+.footer .nav-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 0 50px;
+}
+
+.footer .nav-footer #footer-message{
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer .nav-footer #footer-message #heart-footer{
+    color: #A81B1B;
+}
+
+
+

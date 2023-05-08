@@ -342,5 +342,16 @@ a:visited{
     color: #A81B1B;
 }
 
+/* Tela principal */
 
+.main .sectionTelaPrincipal{
+    background-image: url(images/banners/telaPrincipal.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    background-color: #65D133;
+}
 
+.main .sectionTelaPrincipal .header .nav{
+background-color: null;
+}

@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background-color: #1b1b1b;
+    margin: auto;
+    max-width: 1200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ffffff;
+}
+
+/* nav-bar */
+
+#burguer {
+    display: block;
+    background-color: #a81b1b;
+    text-align: center;
+    display: none;
+}
+
+#burguer:hover {
+    background-color: #1b1b1b;
+    cursor: pointer;
+}
+
+.header .nav .nav-list .list #nav-button {
+    height: 25px;
+    width: 70px;
+    background-color: #a81b1b;
+    border: 0px;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+.logo-nav {
+    height: 30px;
+}
+
+/* banner */
+
+@media screen and (max-width: 800px) {
+    .main .section .banner {
+        background-image: url(../src/images/banners/bannerRecomendacoes.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 275px;
+        width: 100%;
+    }
+
+    .main .section .banner #title-banner {
+        color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+        font-size: 32px;
+    }
+
+    .header .nav {
+        display: block;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .header .nav .nav-list {
+        display: flex;
+        justify-content: space-around;
+        color: #ffffff;
+        align-items: center;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        list-style: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    #ellie-spaceship {
+        height: 100px;
+    }
+
+    .footer .nav-footer .logo-nav {
+        height: 20px;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .main .section .banner {
+        background-image: url(../src/images/banners/bannerRecomendacoes.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+    }
+
+    .header .nav .nav-list {
+        display: flex;
+        gap: 40px;
+        color: #ffffff;
+        align-items: center;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        list-style: none;
+    }
+
+    .header .nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .header .nav .nav-list {
+        display: flex;
+        gap: 40px;
+        color: #ffffff;
+        align-items: center;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        list-style: none;
+    }
+
+    #ellie-spaceship {
+        height: 150px;
+    }
+
+    #logo-game {
+        height: 150px;
+    }
+
+    .main #sectionTelaPrincipal .container {
+        display: flex;
+        height: 500px;
+        width: 100%;
+        gap: 100px;
+        color: #ffffff;
+    }
+
+    .main #sectionTelaPrincipal .container .box1 {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+    }
+
+    .main #sectionTelaPrincipal .container .box1 #game {
+        padding: 50px;
+    }
+
+    .main #sectionTelaPrincipal .container .box2 {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        padding: 50px;
+    }
+
+    .main .section .container2 .box1 {
+        width: 50%;
+        height: 600px;
+    }
+    .main .section .container2 .box2 {
+        width: 50%;
+        height: fit-content;
+        padding: 80px;
+        color: #ffffff;
+    }
+
+    .main .section .container3 .box1 {
+        width: 25%;
+        height: 500px;
+    }
+    .main .section .container3 .box2 {
+        width: 75%;
+        height: fit-content;
+        padding: 80px;
+        color: #000000;
+    }
+    .main .section .container4 .box1 {
+        width: 100%;
+        height: fit-content;
+        padding: 80px;
+        color: #000000;
+    }
+    
+}
+/* footer */
+.footer .nav-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 0 50px;
+}
+
+.footer .nav-footer #footer-message {
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer .nav-footer #footer-message #heart-footer {
+    color: #a81b1b;
+}
+
+/* Tela principal */
+
+.main #sectionTelaPrincipal {
+    background-image: url(../src/images/banners/telaPrincipal.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: fit-content;
+    width: fit-content;
+}
+
+.main #sectionTelaPrincipal .header .nav {
+    background-color: null;
+}
+
+.main #sectionTelaPrincipal .article {
+    padding: 40px;
+}
+
+.main #sectionTelaPrincipal .article .logos-icon {
+    height: 40px;
+}
+
+.main .section .container2 {
+    background-image: url(../src/images/banners/fundoViolao.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #4e524d;
+    height: fit-content; 
+    display: flex;
+    padding: 40px;
+}
+
+.main .section .container2 .box2 #title{
+    font-size: 36px ;
+    text-align: end;
+    
+}
+
+.main .section .container2 .box2 #Sublinhamento{
+    display: flex;
+    justify-content: end;
+}
+
+.main .section .container2 .box2 #SublinhamentoTitlo{
+    background-color: #a81b1b;
+    height: 10px;
+    width: 190px;
+    border: none;
+    margin: 10px 0 50px 0;
+}
+
+.main .section .container2 .box2 #historiaGame{
+    text-align: justify;
+}
+
+
+
+
+.main .section .container3 {
+    background-image: url(../src/images/banners/fundoBranco.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #4e524d;
+    height: fit-content; 
+    display: flex;
+    padding: 40px;
+}
+
+.main .section .container3 .box2 #title{
+    font-size: 36px ;
+    text-align: start;
+    
+}
+
+.main .section .container3 .box2 #Sublinhamento{
+    display: flex;
+    justify-content: start;
+}
+
+.main .section .container3 .box2 #SublinhamentoTitlo{
+    background-color: #a81b1b;
+    height: 10px;
+    width: 190px;
+    border: none;
+    margin: 10px 0 50px 0;
+}
+
+.main .section .container3 .box2 #historiaGame{
+    text-align: justify;
+}
+
+
+
+
+.main .section .container4 {
+    background-image: url(../src/images/banners/escenario-de-the-last-of-us-11552.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #4e524d;
+    height: fit-content; 
+    display: flex;
+    
+}
+
+.main .section .container4 .box1 #title{
+    font-size: 36px ;
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+
+.main .section .container4 .box1{
+    color: #ffffff;
+    
+}
+
+.main .section .container4 .box1 .cards{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.main .section .container4 .box1 .cards .card{
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    
+}

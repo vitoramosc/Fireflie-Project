@@ -333,6 +333,11 @@ a:visited {
     display: flex;
     justify-content: center;
     gap: 40px;
+    
+}
+
+.main .section .container4 .box1 .cards :hover{
+    opacity: 90%;
 }
 
 .main .section .container4 .box1 .cards .card{

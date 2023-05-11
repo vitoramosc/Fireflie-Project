@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
-
-
+@font-face {
+    font-family: 'Headliner No. 45';
+    src: url('https://www.fontsaddict.com/fontface/headliner-no-45.ttf');
+  }
 *{
     margin: 0;
     padding: 0;
@@ -354,4 +356,88 @@ a:visited{
 
 .main .sectionTelaPrincipal .header .nav{
 background-color: null;
+}
+
+/* Tela Login */
+.container{
+    display: flex;
+    align-items: center;
+    height: 80vh;
+}
+.login .container{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#formTitle{
+    font-size: 46px;
+    font-weight: 400;
+    font-family: 'Headliner No. 45';
+}
+
+.login .container .card-login{
+    height: fit-content;
+    width: 700px;
+    background-color: #c0c0c0;
+    border-radius: 25px;
+    display: flex;
+}
+
+.login .container .card-login .formulario{
+    height: 400px;
+    width: 50%;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    text-align: center;
+    padding: 50px 0 0 0;
+}
+
+.campo{
+    margin: 30px;
+}
+
+.campos #registre a{
+    color: #000000;
+}
+
+.tituloInput{
+    display: block;
+    text-align: start;
+}
+
+.form{
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 0 0 0 5px;
+}
+
+.campo #email_input{
+    margin: 0 0 10px 0;
+}
+
+.botao{
+    height: 35px;
+    width: 100px;
+    background-color: #A81B1B;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 5px;
+}
+
+span{
+    font-size: 15px;
+}
+
+#logoImg{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.imgLogo{
+    height: 400px;
 }

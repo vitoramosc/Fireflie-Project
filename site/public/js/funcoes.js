@@ -17,6 +17,8 @@ function validarSessao() {
     }
 }
 
+
+
 function limparSessao() {
     // aguardar();
     sessionStorage.clear();

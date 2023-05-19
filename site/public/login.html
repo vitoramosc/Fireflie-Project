@@ -13,9 +13,11 @@
     <link rel="icon" href="./assets/icon/favicon2.ico">
     <link rel="stylesheet" href="src/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,12 +28,20 @@
         <nav class="nav">
             <a href=""><img src="src/images/logos/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
             <ul class="nav-list" id="navlist">
-                <a href=""><li class="list">Inicio</li></a>
-                <a href=""><li class="list">Sobre o jogo</li></a>
-                <a href=""><li class="list">Recomendações</li></a>
-                <a href=""><li class="list"> <button id="nav-button">Login</button></li></a>
+                <a href="index.html">
+                    <li class="list">Inicio</li>
+                </a>
+                <a href="">
+                    <li class="list">Sobre o jogo</li>
+                </a>
+                <a href="Tela recomendações/recomendações.html">
+                    <li class="list">Recomendações</li>
+                </a>
+                <a href="">
+                    <li class="list"> <button id="nav-button">Login</button></li>
+                </a>
             </ul>
-            
+
         </nav>
     </header>
 
@@ -42,22 +52,22 @@
                 <span id="mensagem_erro"></span>
             </div>
         </section>
-        <section class="container">
+        <section class="container" id="form">
             <div class="card card-login">
                 <div class="formulario">
-                    
+
                     <div class="campos">
                         <br>
                         <h2 id="formTitle">LOGIN</h2>
                         <br>
                         <div class="campo">
                             <span class="tituloInput">E-mail:</span>
-                            <input class="form email_form" id="email_input" type="text" placeholder="Login">
+                            <input class="form email_form" id="email_input" type="text" placeholder="meuemail@provedor.com">
                             <span class="tituloInput">Senha:</span>
-                            <input class="form" id="senha_input" type="text" placeholder="******">
-                            
+                            <input class="form" id="senha_input" type="password" placeholder="******">
+
                         </div>
-                    
+
                         <button class="botao" onclick="entrar()">Entrar</button>
                         <div id="div_erros_login"></div>
                         <div id="registre">Não tem uma conta? <a href="cadastro.html">Registre-se</a></div>
@@ -72,11 +82,11 @@
                 </div>
             </div>
 
-            
 
-            
-        </div>
-        
+
+
+            </div>
+
         </section>
     </main>
 
@@ -84,8 +94,9 @@
     <footer class="footer">
         <div class="nav-footer">
             <a href=""><img src="src/images/logos/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
-        
-            <p id="footer-message">Feito com <span id="heart-footer">&#10084;</span> por <a href="https://github.com/vitoramosc">Vitor Ramos</a> </p>
+
+            <p id="footer-message">Feito com <span id="heart-footer">&#10084;</span> por <a
+                    href="https://github.com/vitoramosc">Vitor Ramos</a> </p>
             <a href="#"><img src="src/images/icons/ellieSpaceship.png" alt="" id="ellie-spaceship"></a>
 
         </div>
@@ -99,19 +110,33 @@
 <script>
 
 
+    function alertaSucess() {
+        Swal.fire(
+            'Tudo Certo!',
+            'Estamos te redirecionando!',
+            'success'
+        )
+    }
+    function alertaErro() {
+        Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Verifique os campos informados e tente novamente',
+        })
+    }
+
     function entrar() {
-        aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Verifique os campos informados e tente novamente";
+            alertaErro()
             finalizarAguardar();
             return false;
         }
         else {
+            
             setInterval(sumirMensagem, 5000)
         }
 
@@ -140,10 +165,10 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-
+                    alertaSucess()
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 4000); // apenas para exibir o loading
 
                 });
 
@@ -167,5 +192,7 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
+
+
 
 </script>

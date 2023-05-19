@@ -43,6 +43,10 @@ a:visited {
     color: #ffffff;
 }
 
+.header .nav .nav-list .list {
+    color: #ffffff;
+}
+
 .logo-nav {
     height: 30px;
 }

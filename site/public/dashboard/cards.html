@@ -6,215 +6,258 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Tempo Real</title>
+    <title>The last Of Us | Quiz</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="dashboards.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="style.css">
 
     <script src="../js/funcoes.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body onload="validarSessao(), atualizacaoPeriodica()">
 
     <div class="janela">
-
-
-        <div class="header-left dash-header">
-
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Aquários</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
+        <nav class="nav">
+            <a href=""><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
+            <ul class="nav-list" id="navlist">
+                <a href="index.html">
+                    <li class="list">Inicio</li>
                 </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                <a href="">
+                    <li class="list">Sobre o jogo</li>
                 </a>
-            </div>
+                <a href="Tela recomendações/recomendações.html">
+                    <li class="list">Recomendações</li>
+                </a>
+                <a href="login.html">
+                    <li class="list"> <button id="nav-button">Login</button></li>
+                </a>
+            </ul>
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
-        </div>
-
-        <div class="dash">
-            <div class="regua">
-                <div class="item-regua perigo-frio">
-                    <h4>Perigo</h4>
-                    <h2>0°C</h2>
+        </nav>
+        <div class="header dash-header">
+            <aside class="aside">
+                <div class="hello">
+                    <h3 class="title">Olá, <span id="b_usuario" class="title">usuário</span>!</h3>
                 </div>
-                <div class="item-regua alerta-frio">
-                    <h4>Alerta</h4>
-                    <h2>0°C</h2>
+    
+                <div class="btn-nav">
+                    <h3 class="title">Quiz</h3>
                 </div>
-                <div class="item-regua ideal">
-                    <h4>Ideal</h4>
-                    <h2>0°C</h2>
+    
+                <div class="btn-nav-white">
+                    <a href="./dashboard.html" class="aSide">
+                        <h3 class="title">Gráficos</h3>
+                    </a>
                 </div>
-                <div class="item-regua alerta-quente">
-                    <h4>Alerta</h4>
-                    <h2>0°C</h2>
+    
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3 class="title">Sair</h3>
                 </div>
-                <div class="item-regua perigo-quente">
-                    <h4>Perigo</h4>
-                    <h2>0°C</h2>
+            </aside>
+            <main class="main">
+                <div id="quizTitle">
+                    <h1 class="title">The Last of Us Quiz</h1>
                 </div>
-            </div>
-
-            <div class="cards">
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_1">-°C</p>
+                <div id="quizContainer">
+                    <div id="quizQuest0" class="quizContent" style="display: block;">
+                        <div class="quizTitle">
+                            <h2>Comece o quiz</h2>
+                            
+                        </div>
+                        <div class="quizOptions">
+                            <button class="quizButton" onclick="avancarQuiz()">Começar</button>
+                        </div>
                     </div>
-                    <div class="cor-alerta" id="card_1"></div>
-                </div>
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_2">-°C</p>
+                    <div id="quizQuest1" class="quizContent" style="display: none;">
+                        <div class="quizTitle">
+                            <h2>Questão 1 - Em que ano o jogo se passa?</h2>
+                        </div>
+                        <div class="quizOptions">
+                            <div class="quizForm" >
+                                <input type="radio" class="inputRadio" id="option1" name="quest1" value="2013"> 2013 <br>
+                                <input type="radio" class="inputRadio" id="option2" name="quest1" value="2033"> 2033 <br>
+                                <input type="radio" class="inputRadio" id="option3" name="quest1" value="2023"> 2023 <br>
+                                <input type="radio" class="inputRadio" id="option4" name="quest1" value="2050"> 2050 <br>
+                            </div>
+                            <button class="quizButton" onclick="avancarQuiz()">proxima questão</button>
+                        </div>
                     </div>
-                    <div class="cor-alerta" id="card_2"></div>
-
-                </div>
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_3">-°C</p>
+                    <div id="quizQuest2" class="quizContent" style="display: none;">
+                        <div class="quizTitle">
+                            <h2>Questão 2 - Qual é o nome completo da Ellie?</h2>
+                        </div>
+                        <div class="quizOptions">
+                            <div class="quizForm">
+                                <input type="radio" class="inputRadio" id="option1" name="quest2" value="Ellie Druckmann"> Ellie Druckmann<br>
+                                <input type="radio" class="inputRadio" id="option2" name="quest2" value="Ellie Miller"> Ellie Miller <br>
+                                <input type="radio" class="inputRadio" id="option3" name="quest2" value="Ellie Williams"> Ellie Williams <br>
+                                <input type="radio" class="inputRadio" id="option4" name="quest2" value="Ellie Johnson"> Ellie Johnson <br>
+                            </div>
+                            <button class="quizButton" onclick="avancarQuiz()">proxima questão</button>
+                        </div>
                     </div>
-                    <div class="cor-alerta ideal" id="card_3"></div>
-                </div>
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_4">-°C</p>
+                    <div id="quizQuest3" class="quizContent" style="display: none;">
+                        <div class="quizTitle">
+                            <h2>Questão 3 - Qual o local de origem do fungo Cordyceps?</h2>
+                        </div>
+                        <div class="quizOptions">
+                            <div class="quizForm">
+                                <input type="radio" class="inputRadio" id="option1" name="quest3" value="Amazonia"> Amazonia <br>
+                                <input type="radio" class="inputRadio" id="option2" name="quest3" value="Africa do Sul"> Africa do Sul <br>
+                                <input type="radio" class="inputRadio" id="option3" name="quest3" value="Tailandia"> Tailandia <br>
+                                <input type="radio" class="inputRadio" id="option4" name="quest3" value="Estados Unidos"> Estados Unidos <br>
+                            </div>
+                            <button class="quizButton" onclick="avancarQuiz()">proxima questão</button>
+                        </div>
                     </div>
-                    <div class="cor-alerta" id="card_4"></div>
+                    <div id="quizQuest4" class="quizContent" style="display: none;">
+                        <div class="quizTitle">
+                            <h2>Questão 4 - Em que ano a filha de Joel Morre?</h2>
+                        </div>
+                        <div class="quizOptions">
+                            <div class="quizForm">
+                                <input type="radio" class="inputRadio" id="option1" name="quest4" value="2013"> 2013 <br>
+                                <input type="radio" class="inputRadio" id="option2" name="quest4" value="2033"> 2033 <br>
+                                <input type="radio" class="inputRadio" id="option3" name="quest4" value="2023"> 2023 <br>
+                                <input type="radio" class="inputRadio" id="option4" name="quest4" value="2050"> 2050 <br>
+                            </div>
+                            <button class="quizButton" onclick="avancarQuiz()">proxima questão</button>
+                        </div>
+                    </div>
+                    <div id="quizQuest5" class="quizContent" style="display: none;">
+                        <div class="quizTitle">
+                            <h2>Questão 5 - Qual o nome do parceiro do Bill?</h2>
+                        </div>
+                        <div class="quizOptions">
+                            <div class="quizForm">
+                                <input type="radio" class="inputRadio" id="option1" name="quest5" value="Frank"> Frank <br>
+                                <input type="radio" class="inputRadio" id="option2" name="quest5" value="Franklin"> Franklin <br>
+                                <input type="radio" class="inputRadio" id="option3" name="quest5" value="Will"> Will <br>
+                                <input type="radio" class="inputRadio" id="option4" name="quest5" value="Richard"> Richard <br>
+                            </div>
+                            <button class="quizButton" onclick="avancarQuiz()">proxima questão</button>
+                        </div>
+                    </div>
+                    <div id="quizQuest6" class="quizContent" style="display: none;">
+                        <div class="quizTitle">
+                            <h2>Questão 6 - Qual o nome do parceiro da Abby?</h2>
+                        </div>
+                        <div class="quizOptions">
+                            <div class="quizForm">
+                                <input type="radio" class="inputRadio" id="option1" name="quest6" value="Lev"> Lev <br>
+                                <input type="radio" class="inputRadio" id="option2" name="quest6" value="Franklin"> Franklin <br>
+                                <input type="radio" class="inputRadio" id="option3" name="quest6" value="Will"> Will <br>
+                                <input type="radio" class="inputRadio" id="option4" name="quest6" value="Richard"> Richard <br>
+                            </div>
+                            <button class="quizButton" onclick="avancarQuiz()">proxima questão</button>
+                        </div>
+                    </div>
+                    <div id="quizQuest7" class="quizContent" style="display: none;">
+                        <div class="quizTitle">
+                            <h2>Questão 7 - Qual o nome do criador da franquia?</h2>
+                        </div>
+                        <div class="quizOptions">
+                            <div class="quizForm">
+                                <input type="radio" class="inputRadio" id="option1" name="quest7" value="Neil Druckmann"> Neil Druckmann <br>
+                                <input type="radio" class="inputRadio" id="option2" name="quest7" value="Neil Armstrong"> Neil Armstrong <br>
+                                <input type="radio" class="inputRadio" id="option3" name="quest7" value="Quentin Tarantino"> Quentin Tarantino <br>
+                                <input type="radio" class="inputRadio" id="option4" name="quest7" value="Robert Richard"> Robert Richard <br>
+                            </div>
+                            <button class="quizButton" onclick="avancarQuiz()">Finalizar tentativa</button>
+                        </div>
+                    </div>
+                    <div id="quizQuest8" class="quizContent" style="display: none;">
+                        <div class="quizTitle">
+                            <h2>Resultado</h2>
+                        </div>
+                        <div class="quizOptions">
+                            <div class="quizForm">
+                                
+                            </div>
+                            <button class="quizButton" onclick="avancarQuiz()">Tentar novamente</button>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-
+            </main>
         </div>
     </div>
+<!--footer inicio-->
+    <footer class="footer">
+        <div class="nav-footer">
+            <a href=""><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
 
+            <p id="footer-message">Feito com <span id="heart-footer">&#10084;</span> por <a
+                    href="https://github.com/vitoramosc">Vitor Ramos</a> </p>
+            <a href="#"><img src="src/images/ellieSpaceship.png" alt="" id="ellie-spaceship"></a>
+
+        </div>
+    </footer>
+<!--footer fim-->
 
 </body>
 
 <script>
+    var pontuaçãoJogador = 0
+    var contador = 0
+        var gabaritoQuiz = ['2023','Ellie Williams','Amazonia','2013','Frank','Lev','Neil Druckmann']
+    var jogadasQuiz = []
+    
+    function checarJogada(){
 
-    function atualizacaoPeriodica() {
-        obterdados(1);
-        obterdados(2);
-        obterdados(3);
-        obterdados(4);
-
-        function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
-
-        setInterval(() => {
-			sendData();
-		}, 2000);
-        setTimeout(atualizacaoPeriodica, 5000);
+        
     }
-
-    function obterdados(idAquario) {
-        fetch(`/medidas/tempo-real/${idAquario}`)
-            .then(resposta => {
-
-                if (resposta.ok) {
-                    resposta.json().then(resposta => {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        var dados = {
-                            temperatura: resposta[0].temperatura,
-                        }
-
-                        alertar(resposta[0].temperatura, idAquario);
-                    });
-                } else {
-
-                    console.error('Nenhum dado encontrado ou erro na API');
+    function avancarQuiz(){
+        if (contador >0){
+            if(document.getElementById('option1').checked == false &&document.getElementById('option2').checked == false &&document.getElementById('option3').checked == false &&document.getElementById('option4').checked == false){
+                contador -= 1
+                Swal.fire({
+                icon: 'error',
+                title: 'Oops, você não selecionou uma resposta',
+                text: 'Clique em Ok e Selecione uma opção!',
+                footer: '<a href="">Why do I have this issue?</a>'
+                })
+            }else{
+                var opcaoSelecionada = document.querySelector(`input[name="quest${contador}"]:checked`).value;
+                jogadasQuiz.push(opcaoSelecionada)
+            }
+            
+            //checarJogada()
+        }
+        document.getElementById(`quizQuest${contador}`).style.display = "none";
+        contador ++
+        document.getElementById(`quizQuest${contador}`).style.display = "block";
+        finalizarPartida()
+    }
+    function parabenizarJogador(){
+        Swal.fire(
+            'Muito bem!',
+            `Você acertou ${pontuaçãoJogador} de ${gabaritoQuiz.length}!`,
+            'success'
+            )
+        }
+    
+    function finalizarPartida(){
+        if(contador >= 8){
+            contador = 0
+            for (var i = 0; i < jogadasQuiz.length; i++){
+                if(jogadasQuiz[i] == gabaritoQuiz[i]){
+                    pontuaçãoJogador ++
                 }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
-            });
-
+            }
+            parabenizarJogador()
+        }
+        if(contador == 1){
+            document.getElementById(`quizQuest8`).style.display = "none";
+        }
     }
-
-    function alertar(temperatura, idAquario) {
-        var limites = {
-            muito_quente: 23,
-            quente: 22,
-            ideal: 20,
-            frio: 10,
-            muito_frio: 5
-        };
-
-        var classe_temperatura = 'cor-alerta';
-
-        if (temperatura >= limites.muito_quente) {
-            classe_temperatura = 'cor-alerta perigo-quente';
-            console.log("caiu no 1")
-        }
-        else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
-            classe_temperatura = 'cor-alerta alerta-quente';
-            console.log("caiu no 2")
-        }
-        else if (temperatura < limites.quente && temperatura > limites.frio) {
-            classe_temperatura = 'cor-alerta ideal';
-            console.log("caiu no 3")
-        }
-        else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
-            classe_temperatura = 'cor-alerta alerta-frio';
-            console.log("caiu no 4")
-        }
-        else if (temperatura < limites.min_temperatura) {
-            classe_temperatura = 'cor-alerta perigo-frio';
-            console.log("caiu no 5")
-        }
-
-        var card;
-
-        if (idAquario == 1) {
-            temp_aquario_1.innerHTML = temperatura + "°C";
-            card = card_1
-        } else if (idAquario == 2) {
-            temp_aquario_2.innerHTML = temperatura + "°C";
-            card = card_2
-        } else if (idAquario == 3) {
-            temp_aquario_3.innerHTML = temperatura + "°C";
-            card = card_3
-        } else if (idAquario == 4) {
-            temp_aquario_4.innerHTML = temperatura + "°C";
-            card = card_4
-        }
-
-        // alterando
-        card.className = classe_temperatura;
-
-    }
-
+        
 </script>
 
 </html>

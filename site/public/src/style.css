@@ -57,6 +57,10 @@ a:visited{
     height: 30px;
 }
 
+#atual{
+    color: #A81B1B;
+}
+
 /* banner */
 
 .main .section .banner{
@@ -98,6 +102,8 @@ a:visited{
     opacity: 75%;
     
 }
+
+
 
 
 
@@ -177,6 +183,19 @@ a:visited{
     height: 150px;
 }
 
+}
+
+.main .section .bannerTlou1{
+    background-image: url(../src/images/banners/tlou1.jpg);
+    background-position: center;
+    opacity: 75%;
+    height: 300px;
+}
+.main .section .bannerTlou2{
+    background-image: url(../src/images/banners/telaPrincipal.png);
+    background-position: center;
+    opacity: 75%;
+    height: 300px;
 }
 
 /*Game-Catalogue-Veja mais*/

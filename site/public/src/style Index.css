@@ -51,6 +51,12 @@ a:visited {
     height: 30px;
 }
 
+#atual{
+    color: #A81B1B;
+    text-shadow: 1px 1px #000000;
+
+}
+
 /* banner */
 
 @media screen and (max-width: 800px) {

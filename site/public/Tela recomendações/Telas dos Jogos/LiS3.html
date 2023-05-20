@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God of War 2018</title>
+    <link rel="stylesheet" href="../../src/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href=""><img src="../../src/images/logos/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
+            <ul class="nav-list" id="navlist">
+                <a href="">
+                    <li class="list">Inicio</li>
+                </a>
+                <a href="">
+                    <li class="list">Sobre o jogo</li>
+                </a>
+                <a href="../recomendações.html">
+                    <li class="list">Recomendações</li>
+                </a>
+                <a href="">
+                    <li class="list"> <button onclick="carrossel()" id="nav-button">Login</button></li>
+                </a>
+            </ul>
+
+        </nav>
+    </header>
+    <main class="main">
+        <section class="section">
+            <div class="game-apresentation">
+                <h2 class="section-title">GOD OF WAR</h2>
+                <div class="container">
+                    <div class="trailer">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FyIwEFXOcaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                        <ul id="carateristics-game">
+                            <li>Developer: SCE Santa Monica</li>
+                            <li>Genre(s): Action Adventure, Linear</li>
+                        </ul>
+                    </div>
+                    <div class="metacritic">
+                        <div class="metascore">
+                            <div class="logoMetascore">
+                                <p id="noteMetascore">94</p>
+                            </div>
+                            <div class="text-metacritic">
+                                <h2 class="title-metacritic">Metascore</h2>
+                            <p class="description-metacritic">Generally favorable reviews
+                                based on 118 Critic Reviews</p>
+                            </div>
+                        </div>
+                        <div class="publicScore">
+                            <div class="logopublicScore">
+                                <p id="noteMetascore">9.1</p>
+                            </div>
+                            <div class="text-metacritic">
+                                <h2 class="title-metacritic">Nota do Público</h2>
+                            <p class="description-metacritic">Universal acclaim
+                                based on 22841 Ratings</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-game">
+                <h2 class="section-title">SOBRE O JOGO</h2>
+                <div class="game-images">
+                    <div class="carrossel">
+                        <div class="container" id="img">
+                            <img src="../../src/images/banners/gow2018/44b69a6259e928b3c0aa5839b5255c9972e8ac14-scaled.webp" alt="foto do jogo"
+                                class="printGameplay">
+                            <img src="../../src/images/banners/gow2018/God-of-War-gameplay.jpg" alt=""
+                                class="printGameplay">
+                            <img src="../../src/images/banners/gow2018/God-of-War.jpg"
+                                alt="" class="printGameplay">
+                            <img src="../../src/images/banners/gow2018/God_of_War.jpg"
+                                alt="" class="printGameplay">
+                        </div>
+                    </div>
+                    <div class="sinopse">
+                        <h2>HISTÓRIA</h2> <br>
+                        <p>Com a vingança contra os deuses do Olimpo em um passado distante, Kratos agora vive como um mortal no reino dos deuses e monstros nórdicos. É nesse mundo duro e implacável que ele deve lutar para sobreviver... e ensinar seu filho a fazer o mesmo.<br><br>
+                            
+                        Kratos é pai novamente. Como mentor e protetor de Atreus, um filho determinado a ganhar seu respeito, ele é forçado a encarar e controlar a fúria que há muito tempo o define enquanto viaja por um mundo ameaçador ao lado do filho.<br><br>
+                            
+                        Viaje até um mundo sombrio e primitivo habitado por criaturas terríveis
+                        Do mármore e das colunas ornadas do Olimpo para as montanhas, cavernas e florestas sombrias do folclore nórdico pré-era viking, este é um reino claramente novo, com um panteão próprio de criaturas, monstros e deuses.</p> 
+                    </div>
+                    <div class="Requieriments-pc">
+                        
+                    </div>
+                    <div class="game-plataforms">
+
+                    </div>
+                </div>
+            </div>
+            <div class="GameCatalogue">
+                <h2 class="section-title">VEJA MAIS</h2>
+                <div class="Cards">
+                    <a href="GowRagnarok.html"><img src="../../src/images/imgs-Cards/cardGowRagnarok.jpg" alt="" class="imgCard"></a>
+                    <a href="PlagueTaleRequiem.html"><img src="../../src/images/imgs-Cards/posterPlagueTale2.jpg" alt="" class="imgCard"></a>
+                    <a href=""><img src="../../src/images/imgs-Cards/banner3.jpg" alt="" class="imgCard"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="nav-footer">
+            <a href=""><img src="../../src/images/logos/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
+
+            <p id="footer-message">Feito com <span id="heart-footer">&#10084;</span> por <a
+                    href="https://github.com/vitoramosc">Vitor Ramos</a> </p>
+            <a href="#"><img src="../../src/images/icons/ellieSpaceship.png" alt="" id="ellie-spaceship"></a>
+
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    const imgs = document.getElementById('img');
+    const img = document.querySelectorAll("#img .printGameplay");
+
+    let idx = 0;
+
+    function carrossel() {
+        idx++;
+        if (idx > img.length - 1) {
+            idx = 0
+        }
+
+        imgs.style.transform = `translateX(${-idx * 500}px)`;
+    }
+
+    setInterval(carrossel, 3000);
+
+</script>

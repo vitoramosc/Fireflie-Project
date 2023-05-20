@@ -181,6 +181,10 @@ a:visited{
 
 /*Game-Catalogue-Veja mais*/
 
+.text {
+    text-shadow: 2px 2px #000000;
+}
+
 .section-title{
     font-size: 46px;
     color: #FFFFFF;
@@ -295,7 +299,6 @@ a:visited{
 }
 
 .carrossel{
-    box-shadow: 2px 2px 4px black;
     overflow: hidden;
     height: fit-content;
     width: 500px;

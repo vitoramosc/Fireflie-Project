@@ -156,6 +156,9 @@ a:visited {
     .main #sectionTelaPrincipal .container .box1 #game {
         padding: 50px;
     }
+    .text {
+        text-shadow: 2px 2px #000000;
+    }
 
     .main #sectionTelaPrincipal .container .box2 {
         width: 50%;

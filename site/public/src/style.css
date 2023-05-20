@@ -1,42 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
 @font-face {
     font-family: 'Headliner No. 45';
     src: url('https://www.fontsaddict.com/fontface/headliner-no-45.ttf');
-  }
-*{
+}
+
+* {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 
 }
 
-body{
+body {
     background-color: #1B1B1B;
     max-width: 1275px;
     margin: auto;
 }
 
-a{
+a {
     text-decoration: none;
-    
+
 }
-a:visited{
+
+a:visited {
     color: #FFFFFF;
-    
+
 }
 
 /* nav-bar */
 
 
 
-#burguer{
+#burguer {
     display: block;
     background-color: #A81B1B;
     text-align: center;
     display: none;
 }
 
-#burguer:hover{
+#burguer:hover {
     background-color: #1B1B1B;
     cursor: pointer;
 }
@@ -44,7 +47,7 @@ a:visited{
 
 
 
-.header .nav .nav-list .list #nav-button{
+.header .nav .nav-list .list #navButton {
     height: 25px;
     width: 70px;
     background-color: #A81B1B;
@@ -53,54 +56,54 @@ a:visited{
     color: #FFFFFF;
 }
 
-.logo-nav{
+.logo-nav {
     height: 30px;
 }
 
-#atual{
+#atual {
     color: #A81B1B;
 }
 
 /* banner */
 
-.main .section .banner{
+.main .section .banner {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 80px;
-    
+
 }
 
-.main .section .banner #title-banner{
+.main .section .banner #title-banner {
     color: #FFFFFF;
     font-family: 'Open Sans', sans-serif;
     font-size: 54px;
 }
 
-.main .section .GameCatalogue .imgCard{
+.main .section .GameCatalogue .imgCard {
     height: 437.4px;
     width: 291.64px;
     border-radius: 15px;
     margin-bottom: 80px;
-    
+
 }
 
-.main .section .GameCatalogue .imgCard :hover{
+.main .section .GameCatalogue .imgCard :hover {
     opacity: 50%;
 
 }
 
-.main .section .GameCatalogue .Cards{
+.main .section .GameCatalogue .Cards {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 0 100px;
-    
+
 }
 
-.main .section .GameCatalogue .Cards :hover{
+.main .section .GameCatalogue .Cards :hover {
     opacity: 75%;
-    
+
 }
 
 
@@ -108,26 +111,29 @@ a:visited{
 
 
 @media screen and (max-width : 800px) {
-    .main .section .banner{
+    .main .section .banner {
         background-image: url(../src/images/banners/bannerRecomendacoes.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         height: 275px;
         width: 100%;
     }
-    .main .section .banner #title-banner{
+
+    .main .section .banner #title-banner {
         color: #FFFFFF;
         font-family: 'Open Sans', sans-serif;
         font-size: 32px;
     }
-    .header .nav{
+
+    .header .nav {
         display: block;
         justify-content: space-between;
         margin: 20px;
         padding: 20px;
         background-color: #1B1B1B;
     }
-    .header .nav .nav-list{
+
+    .header .nav .nav-list {
         display: flex;
         justify-content: space-around;
         background-color: #1B1B1B;
@@ -139,59 +145,68 @@ a:visited{
         text-align: center;
         margin-top: 10px;
     }
-    #ellie-spaceship{
+
+    #ellie-spaceship {
         height: 100px;
     }
-    .footer .nav-footer .logo-nav{
+
+    .footer .nav-footer .logo-nav {
         height: 20px;
     }
-    
-  }
+
+}
+
 @media screen and (min-width: 801px) {
-.main .section .banner{
-    background-image: url(../src/images/banners/bannerRecomendacoes.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 500px;
-    width: 100%;  
-}
-.header .nav .nav-list{
-    display: flex;
-    gap: 40px;
-    color: #FFFFFF;
-    align-items: center;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    list-style: none;
-}
-.header .nav{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-    padding: 20px;
-    background-color: #1B1B1B;
-}
-.header .nav .nav-list{
-    display: flex;
-    gap: 40px;
-    color: #FFFFFF;
-    align-items: center;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    list-style: none;
-}#ellie-spaceship{
-    height: 150px;
-}
+    .main .section .banner {
+        background-image: url(../src/images/banners/bannerRecomendacoes.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+    }
+
+    .header .nav .nav-list {
+        display: flex;
+        gap: 40px;
+        color: #FFFFFF;
+        align-items: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        list-style: none;
+    }
+
+    .header .nav {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+        padding: 20px;
+        background-color: #1B1B1B;
+    }
+
+    .header .nav .nav-list {
+        display: flex;
+        gap: 40px;
+        color: #FFFFFF;
+        align-items: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        list-style: none;
+    }
+
+    #ellie-spaceship {
+        height: 150px;
+    }
 
 }
 
-.main .section .bannerTlou1{
+.main .section .bannerTlou1 {
     background-image: url(../src/images/banners/tlou1.jpg);
     background-position: center;
     opacity: 75%;
     height: 300px;
 }
-.main .section .bannerTlou2{
+
+.main .section .bannerTlou2 {
     background-image: url(../src/images/banners/telaPrincipal.png);
     background-position: center;
     opacity: 75%;
@@ -204,80 +219,80 @@ a:visited{
     text-shadow: 2px 2px #000000;
 }
 
-.section-title{
+.section-title {
     font-size: 46px;
     color: #FFFFFF;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     margin-bottom: 50px;
     margin-top: 50px;
-    
+
 }
 
-.main .section .game-apresentation .container{
+.main .section .game-apresentation .container {
     display: flex;
     gap: 90px;
 }
 
-.main .section .game-apresentation{
+.main .section .game-apresentation {
     color: #FFFFFF;
     margin: 0 50px;
     font-family: 'Open Sans', sans-serif;
 }
 
-.main .section .game-apresentation #carateristics-game{
+.main .section .game-apresentation #carateristics-game {
     margin: 10px 30px;
 }
 
-.main .section .game-apresentation .container .metacritic{
+.main .section .game-apresentation .container .metacritic {
     margin-top: 30px;
 }
 
-.main .section .game-apresentation .container .metacritic .metascore{
+.main .section .game-apresentation .container .metacritic .metascore {
     display: flex;
     gap: 20px;
     margin-bottom: 30px;
 }
 
-.main .section .game-apresentation .container .metacritic .metascore .logoMetascore{
+.main .section .game-apresentation .container .metacritic .metascore .logoMetascore {
     background-color: #65D133;
     border-radius: 7px;
     height: 100px;
-    width: 100px ;
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.main .section .game-apresentation .container .metacritic #noteMetascore{
+.main .section .game-apresentation .container .metacritic #noteMetascore {
     font-size: 32px;
     font-weight: bold;
 }
 
-.main .section .game-apresentation .container .metacritic .text-metacritic{
+.main .section .game-apresentation .container .metacritic .text-metacritic {
     width: 250px;
 }
 
-.main .section .game-apresentation .container .metacritic .text-metacritic .title-metacritic{
-        margin-bottom: 15px;
+.main .section .game-apresentation .container .metacritic .text-metacritic .title-metacritic {
+    margin-bottom: 15px;
 }
 
-.main .section .game-apresentation .container .metacritic .publicScore{
+.main .section .game-apresentation .container .metacritic .publicScore {
     display: flex;
     gap: 20px;
 }
 
-.main .section .game-apresentation .container .metacritic .publicScore .logopublicScore{
+.main .section .game-apresentation .container .metacritic .publicScore .logopublicScore {
     background-color: #65D133;
     border-radius: 100px;
     height: 100px;
-    width: 100px ;
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.main .section .about-game{
+.main .section .about-game {
     color: #FFFFFF;
     margin: 0 50px;
     font-family: 'Open Sans', sans-serif;
@@ -292,12 +307,13 @@ a:visited{
     
 }*/
 
-.main .section .game-info .sinopse{
+.main .section .game-info .sinopse {
     margin-top: 50px;
     width: 50%;
     height: fit-content;
     text-align: justify;
 }
+
 /*
 .main .section .game-info .Requieriments-pc{
     margin-top: 50px;
@@ -307,45 +323,45 @@ a:visited{
 } */
 
 
-.main .section .GameCatalogue .gameplay .fotoGameplay{
+.main .section .GameCatalogue .gameplay .fotoGameplay {
     height: 250px;
-    
+
 }
 
-.main .section .game-images{
+.main .section .game-images {
     display: flex;
     justify-content: space-between;
 }
 
-.carrossel{
+.carrossel {
     overflow: hidden;
     height: fit-content;
     width: 500px;
 
-    
+
 }
 
-.container{
+.container {
     display: flex;
     transition: transform 0.5s ease-in-out;
     transform: translateX(0);
-    
+
 }
 
-.printGameplay{
+.printGameplay {
     object-fit: cover;
     width: 500px;
 }
 
-.main .section .sinopse{
+.main .section .sinopse {
     padding-left: 30px;
     color: #FFFFFF;
     width: 500px;
-    
+
 }
 
 /* footer */
-.footer .nav-footer{
+.footer .nav-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -353,20 +369,20 @@ a:visited{
     padding: 0 50px;
 }
 
-.footer .nav-footer #footer-message{
+.footer .nav-footer #footer-message {
     color: #FFFFFF;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     text-align: center;
 }
 
-.footer .nav-footer #footer-message #heart-footer{
+.footer .nav-footer #footer-message #heart-footer {
     color: #A81B1B;
 }
 
 /* Tela principal */
 
-.main .sectionTelaPrincipal{
+.main .sectionTelaPrincipal {
     background-image: url(images/banners/telaPrincipal.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -374,36 +390,36 @@ a:visited{
     background-color: #65D133;
 }
 
-.main .sectionTelaPrincipal .header .nav{
-background-color: null;
+.main .sectionTelaPrincipal .header .nav {
+    background-color: null;
 }
 
 /* Tela Login */
-.container{
+.container {
     display: flex;
     /* height: 80vh; */
 }
 
-#form{
+#form {
     display: flex;
     align-items: center;
     height: 80vh;
 }
 
 
-.login .container{
+.login .container {
     display: flex;
     justify-content: center;
-    
+
 }
 
-#formTitle{
+#formTitle {
     font-size: 46px;
     font-weight: 400;
     font-family: 'Headliner No. 45';
 }
 
-.login .container .card-login{
+.login .container .card-login {
     height: fit-content;
     width: 700px;
     background-color: #c0c0c0;
@@ -411,11 +427,11 @@ background-color: null;
     display: flex;
 }
 
-.login .container .registro{
+.login .container .registro {
     background-color: #A81B1B;
 }
 
-.login .container .card-login .formulario{
+.login .container .card-login .formulario {
     width: 50%;
     background-color: #FFFFFF;
     border-radius: 25px;
@@ -423,24 +439,24 @@ background-color: null;
     padding: 50px 0 0 0;
 }
 
-.campo{
+.campo {
     margin: 30px;
 }
 
-.campos #registre{
+.campos #registre {
     margin: 20px 0;
 }
 
-.campos #registre a{
+.campos #registre a {
     color: #A81B1B;
 }
 
-.tituloInput{
+.tituloInput {
     display: block;
     text-align: start;
 }
 
-.form{
+.form {
     width: 100%;
     height: 25px;
     border-radius: 5px;
@@ -448,11 +464,11 @@ background-color: null;
     padding: 0 0 0 5px;
 }
 
-.campo .email_form{
+.campo .email_form {
     margin: 0 0 10px 0;
 }
 
-.botao{
+.botao {
     height: 35px;
     width: 100px;
     background-color: #A81B1B;
@@ -461,11 +477,11 @@ background-color: null;
     border-radius: 5px;
 }
 
-span{
+span {
     font-size: 15px;
 }
 
-#logoImg{
+#logoImg {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -473,62 +489,62 @@ span{
 
 }
 
-.imgLogo{
+.imgLogo {
     height: 400px;
 }
 
-.imgLogo2{
+.imgLogo2 {
     height: 350px;
 }
 
 
 .loading-div {
-width: 50px;
-display: none;
+    width: 50px;
+    display: none;
 }
 
 .loading-div img {
-height: 50px;
-width: 50px;
+    height: 50px;
+    width: 50px;
 }
 
 #div_erros_login {
-display: none;
-margin-top: 10px;
-justify-content: center;
+    display: none;
+    margin-top: 10px;
+    justify-content: center;
 }
 
-.alerta_erro{
-display: flex;
-position: relative;
-justify-content: flex-end;
+.alerta_erro {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
 }
 
 .card_erro {
-display: none;
-background-color: #fff;
-color: black;
-width: 230px;
-position: fixed;
-border-radius: 4px;
-border: #A81B1B 3px solid;
-padding: 10px;
-margin-right: 10%;
-text-align: center;
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 4px;
+    border: #A81B1B 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+    text-align: center;
 }
 
-.card_erro #mensagem_erro{
-font-weight: 500;
-font-size: 20px;
+.card_erro #mensagem_erro {
+    font-weight: 500;
+    font-size: 20px;
 }
 
 .loading-div {
-width: 50px;
-margin: auto;
-display: none;
+    width: 50px;
+    margin: auto;
+    display: none;
 }
 
 .loading-div img {
-height: 20px;
-width: 20px;
+    height: 20px;
+    width: 20px;
 }

@@ -12,7 +12,9 @@
     <link rel="icon" href="./assets/icon/favicon2.ico">
     <link rel="stylesheet" href="src/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
@@ -25,17 +27,20 @@
 
     <header class="header">
         <nav class="nav">
-            <a href="index.html"><img src="src/images/logos/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
+            <a href="index.html"><img src="src/images/logos/The-Last-Of-Us-Logo-PNG-Image.png" alt=""
+                    class="logo-nav"></a>
             <ul class="nav-list" id="navlist">
                 <a href="index.html">
                     <li class="list">Inicio</li>
                 </a>
-                <a href="index.html#historia"><li class="list">Sobre o jogo</li></a>
+                <a href="index.html#historia">
+                    <li class="list">Sobre o jogo</li>
+                </a>
                 <a href="Tela recomendações/recomendações.html">
                     <li class="list">Recomendações</li>
                 </a>
                 <a href="cadastro.html">
-                    <li class="list"> <button id="nav-button">Criar conta</button></li>
+                    <li class="list"> <button id="navButton">Criar conta</button></li>
                 </a>
             </ul>
 
@@ -59,7 +64,8 @@
                         <br>
                         <div class="campo">
                             <span class="tituloInput">E-mail:</span>
-                            <input class="form email_form" id="email_input" type="text" placeholder="meuemail@provedor.com">
+                            <input class="form email_form" id="email_input" type="text"
+                                placeholder="meuemail@provedor.com">
                             <span class="tituloInput">Senha:</span>
                             <input class="form" id="senha_input" type="password" placeholder="******">
 
@@ -116,9 +122,9 @@
     }
     function alertaErro() {
         Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Verifique os campos informados e tente novamente',
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Verifique os campos informados e tente novamente',
         })
     }
 
@@ -133,7 +139,7 @@
             return false;
         }
         else {
-            
+
             setInterval(sumirMensagem, 5000)
         }
 

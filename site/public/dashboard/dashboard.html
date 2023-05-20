@@ -18,7 +18,7 @@
 
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+
 
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
@@ -35,56 +35,59 @@
 
     <div class="janela">
         <nav class="nav">
-            <a href=""><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
+            <a href="../index.html"><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
             <ul class="nav-list" id="navlist">
-                <a href="index.html">
+                <a href="../index.html">
                     <li class="list">Inicio</li>
                 </a>
-                <a href="">
+                <a href="../index.html#historia">
                     <li class="list">Sobre o jogo</li>
                 </a>
-                <a href="Tela recomendações/recomendações.html">
+                <a href="../Tela recomendações/recomendações.html">
                     <li class="list">Recomendações</li>
                 </a>
-                <a href="login.html">
-                    <li class="list"> <button id="nav-button">Login</button></li>
+                <a href="">
+                    <li class="list"> <button id="navButton" onclick="limparSessao()">Sair</button></li>
                 </a>
             </ul>
 
         </nav>
-        <div><h2 id="rankingFinal"></h2></div>
+        <div>
+            <h2 id="rankingFinal"></h2>
+        </div>
         <div class="header dash-header">
             <aside class="aside">
                 <div class="hello">
                     <h3 class="title">Olá, <span id="b_usuario" class="title">usuário</span>!</h3>
                 </div>
-    
+
                 <div class="btn-nav">
                     <a href="./cards.html" class="aSide">
                         <h3 class="title">Quiz</h3>
                     </a>
                 </div>
-    
+
                 <div class="btn-nav-white">
                     <h3 class="title">Gráficos</h3>
                 </div>
-    
+
                 <div class="btn-logout" onclick="limparSessao()">
                     <h3 class="title">Sair</h3>
                 </div>
             </aside>
-            
+
             <div id="contentChart">
                 <div class="slide-show select-disable">
                     <h2>Ranking dos Personagens favoritos</h2>
                     <ul class="slides-list">
                         <li class="slide">
-                            <canvas id="myChart"></canvas > 
+                            <canvas id="myChart"></canvas>
                         </li>
                     </ul>
                 </div>
-            </div>
-    
+                        
+            </div>
+
         </div>
     </div>
 
@@ -99,7 +102,7 @@
 
         </div>
     </footer>
-<!--footer fim-->
+    <!--footer fim-->
 
 
 </body>
@@ -150,15 +153,15 @@
         var dados = {
             labels: [],
             datasets: [
-                    {
-                        label: '',
-                        display: false,
-                        data: []
-                    },
+                {
+                    label: '',
+                    display: false,
+                    data: []
+                },
                 {
                     yAxisID: 'y-totalpersonagens',
                     label: 'Personagem Favorito',
-                    backgroundColor: ['#A81B1B', '#a84c1b', '#5da81b', '#1ba83c', '#1b7ba8', '#1b20a8', '#771ba8','#a81b90','#a81b61','#008000'],
+                    backgroundColor: ['#A81B1B', '#a84c1b', '#5da81b', '#1ba83c', '#1b7ba8', '#1b20a8', '#771ba8', '#a81b90', '#a81b61', '#008000'],
                     fill: true,
                     data: []
                 }
@@ -172,17 +175,17 @@
             dados.labels.push(registro.personagem);
             dados.datasets[0].data.push(registro.personagem);
             dados.datasets[1].data.push(registro.voto);
-            if (registro.voto >= votos){
+            if (registro.voto >= votos) {
                 var votos = registro.voto
                 var personagem = registro.personagem
             }
         }
-        
+
         rankingFinal.innerHTML = `O personagem mais votado é: <span class="titleRanking">${personagem}</span> com <span class="titleRanking">${votos}</span> votos`
 
         console.log(`=======${votos},${personagem}=======`)
-        for(i = 0; i < resposta.length; i++){
-            
+        for (i = 0; i < resposta.length; i++) {
+
         }
         console.log(JSON.stringify(dados));
 
@@ -263,5 +266,5 @@
 
         }
 
-    }
+    }
 </script>

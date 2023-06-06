@@ -47,7 +47,7 @@ a:visited {
 
 
 
-.header .nav .nav-list .list #navButton {
+.header .nav .nav-list .list #navButton,#nav-button  {
     height: 25px;
     width: 70px;
     background-color: #A81B1B;

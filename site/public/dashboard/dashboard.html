@@ -2,23 +2,22 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Last of Us | Dashboards</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="../js/funcoes.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
@@ -32,10 +31,10 @@
 </head>
 
 <body onload=" atualizarFeed()">
-
     <div class="janela">
         <nav class="nav">
-            <a href="../index.html"><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
+            <a href="../index.html"><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt=""
+                    class="logo-nav" /></a>
             <ul class="nav-list" id="navlist">
                 <a href="../index.html">
                     <li class="list">Inicio</li>
@@ -47,18 +46,19 @@
                     <li class="list">Recomendações</li>
                 </a>
                 <a href="">
-                    <li class="list"> <button id="navButton" onclick="limparSessao()">Sair</button></li>
+                    <li class="list">
+                        <button id="navButton" onclick="limparSessao()">Sair</button>
+                    </li>
                 </a>
             </ul>
-
         </nav>
-        <div>
-            <h2 id="rankingFinal"></h2>
-        </div>
+        
         <div class="header dash-header">
             <aside class="aside">
                 <div class="hello">
-                    <h3 class="title">Olá, <span id="b_usuario" class="title">usuário</span>!</h3>
+                    <h3 class="title">
+                        Olá, <span id="b_usuario" class="title">usuário</span>!
+                    </h3>
                 </div>
 
                 <div class="btn-nav">
@@ -77,194 +77,267 @@
             </aside>
 
             <div id="contentChart">
+                <div>
+                    <h2 id="rankingFinal"></h2>
+                </div>
                 <div class="slide-show select-disable">
-                    <h2>Ranking dos Personagens favoritos</h2>
+                    <h2 class="titleGraph">Ranking dos personagens mais votados</h2>
                     <ul class="slides-list">
                         <li class="slide">
                             <canvas id="myChart"></canvas>
                         </li>
                     </ul>
                 </div>
-                        
+                <div>
+                    <h2 id="rankingFinal2"></h2>
+                </div>
+                <div class="slide-show select-disable">
+                    <h2 class="titleGraph">Ranking do quiz</h2>
+                    <ul class="slides-list">
+                        <li class="slide">
+                            <canvas id="myChart2"></canvas>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
         </div>
     </div>
 
     <!--footer inicio-->
     <footer class="footer">
         <div class="nav-footer">
-            <a href=""><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav"></a>
+            <a href=""><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav" /></a>
 
-            <p id="footer-message">Feito com <span id="heart-footer">&#10084;</span> por <a
-                    href="https://github.com/vitoramosc">Vitor Ramos</a> </p>
-            <a href="#"><img src="src/images/ellieSpaceship.png" alt="" id="ellie-spaceship"></a>
-
+            <p id="footer-message">
+                Feito com <span id="heart-footer">&#10084;</span> por
+                <a href="https://github.com/vitoramosc">Vitor Ramos</a>
+            </p>
+            <a href="#"><img src="src/images/ellieSpaceship.png" alt="" id="ellie-spaceship" /></a>
         </div>
     </footer>
     <!--footer fim-->
-
-
 </body>
 
 </html>
 
 <script>
-
-
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO
-
-
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     let proximaAtualizacao;
 
-    window.onload = obterDadosGrafico(1);
+    window.onload = obterDadosGrafico();
+    window.onload = obterDadosGrafico2();
 
 
-    function obterDadosGrafico(idAquario) {
-
+    function obterDadosGrafico() {
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
 
-
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    plotarGrafico(resposta, idAquario);
-
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
+        fetch(`/medidas/ultimas`, { cache: "no-store" })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        plotarGrafico(resposta);
+                    });
+                } else {
+                    console.error("Nenhum dado encontrado ou erro na API");
+                }
+            })
             .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                console.error(
+                    `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+                );
             });
     }
 
     // Esta função plotarGrafico usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e,
     // A função plotarGrafico também invoca a função atualizarGrafico
     function plotarGrafico(resposta, idAquario) {
-        console.log('iniciando plotagem do gráfico...');
+        console.log("iniciando plotagem do gráfico...");
 
         var dados = {
             labels: [],
             datasets: [
                 {
-                    label: '',
-                    display: false,
-                    data: []
-                },
-                {
-                    yAxisID: 'y-totalpersonagens',
-                    label: 'Personagem Favorito',
-                    backgroundColor: ['#A81B1B', '#a84c1b', '#5da81b', '#1ba83c', '#1b7ba8', '#1b20a8', '#771ba8', '#a81b90', '#a81b61', '#008000'],
+                    yAxisID: "y-totalpersonagens",
+                    label: "Personagem Favorito",
+                    backgroundColor: [
+                        "#A81B1B",
+                        "#a84c1b",
+                        "#5da81b",
+                        "#1ba83c",
+                        "#1b7ba8",
+                        "#1b20a8",
+                        "#771ba8",
+                        "#a81b90",
+                        "#a81b61",
+                        "#008000",
+                    ],
                     fill: true,
-                    data: []
-                }
-            ]
+                    data: [],
+                },
+            ],
         };
-        var personagemMaisVotado = []
-        var votos = 0
-        var personagem = ""
+        var personagemMaisVotado = [];
+        var votos = 0;
+        var personagem = "";
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             dados.labels.push(registro.personagem);
-            dados.datasets[0].data.push(registro.personagem);
-            dados.datasets[1].data.push(registro.voto);
+            // dados.datasets[0].data.push(registro.personagem);
+            dados.datasets[0].data.push(registro.voto);
             if (registro.voto >= votos) {
-                var votos = registro.voto
-                var personagem = registro.personagem
+                var votos = registro.voto;
+                var personagem = registro.personagem;
             }
         }
 
-        rankingFinal.innerHTML = `O personagem mais votado é: <span class="titleRanking">${personagem}</span> com <span class="titleRanking">${votos}</span> votos`
+        rankingFinal.innerHTML = `O personagem mais votado é: <span class="titleRanking">${personagem}</span> com <span class="titleRanking">${votos}</span> votos`;
 
-        console.log(`=======${votos},${personagem}=======`)
-        for (i = 0; i < resposta.length; i++) {
-
-        }
+        console.log(`=======${votos},${personagem}=======`);
+        for (i = 0; i < resposta.length; i++) { }
         console.log(JSON.stringify(dados));
 
-        var ctx = myChart.getContext('2d');
+        var ctx = myChart.getContext("2d");
         window.myChart = Chart.Bar(ctx, {
             data: dados,
             options: {
                 responsive: true,
                 animation: { duration: 900 },
-                hoverMode: 'index',
+                hoverMode: "index",
                 stacked: false,
                 title: {
                     display: false,
-                    text: 'Os Personagens mais Escolhidos'
+                    text: "Os Personagens mais Escolhidos",
                 },
 
                 scales: {
-                    yAxes: [{
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
-                        id: 'y-totalpersonagens',
-                        ticks: {
-                            beginAtZero: true,
-                            max: 30,
-                            min: 0
-                        }
-                    }, {
-                        display: false,
-                    }],
-                }
-            }
+                    yAxes: [
+                        {
+                            type: "linear",
+                            display: true,
+                            position: "left",
+                            id: "y-totalpersonagens",
+                            ticks: {
+                                beginAtZero: true,
+                                max: 30,
+                                min: 0,
+                            },
+                        },
+                        {
+                            display: false,
+                        },
+                    ],
+                },
+            },
         });
+    }
 
-
-
-        // Esta função atualizarGrafico atualiza o gráfico que foi renderizado na página,
-        // buscando a última medida inserida em tabela contendo as capturas, 
-
-        //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-        //     Para ajustar o "select", ajuste o comando sql em src/models
-        function atualizarGrafico(idAquario, dados) {
-
-            fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (novoRegistro) {
-
-                        console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
-                        console.log(dados);
-
-                        for (i = 0; i < novoRegistro.length; i++) {
-                            var registro = novoRegistro[i];
-                            // tirando e colocando valores no gráfico
-                            dados.labels.shift(); // apagar o primeiro
-                            dados.labels.push(registro.personagem);// incluir um novo momento
-
-                            dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                            dados.datasets[0].data.push(registro.personagem); // incluir uma nova medida de umidade
-
-                            dados.datasets[1].data.shift();
-                            dados.datasets[1].data.push(registro.voto);
-                        }
-
-                        window.myChart.update();
-
-                        // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 200000);
-                }
-            })
-                .catch(function (error) {
-                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-                });
-
+    function obterDadosGrafico2() {
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
         }
 
+        fetch(`/medidas/buscarPontuacao`, { cache: "no-store" })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        plotarGrafico2(resposta);
+                    });
+                } else {
+                    console.error("Nenhum dado encontrado ou erro na API");
+                }
+            })
+            .catch(function (error) {
+                console.error(
+                    `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+                );
+            });
+    }
+
+    function plotarGrafico2(resposta) {
+        console.log("iniciando plotagem do gráfico...");
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    yAxisID: "y-totalpersonagens",
+                    label: "Pontuacao",
+                    backgroundColor: [
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                    ],
+                    fill: true,
+                    data: [],
+                },
+            ],
+        };
+        var personagemMaisVotado = [];
+        var pontuacao = 0;
+        var usuario = "";
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.nome);
+            // dados.datasets[0].data.push(registro.personagem);
+            dados.datasets[0].data.push(registro.acertos);
+            if (registro.acertos >= pontuacao) {
+                pontuacao = registro.acertos;
+                usuario = registro.nome;
+            }
+        }
+        rankingFinal2.innerHTML = `O usuário que mais acertou no quiz é o: <span class="titleRanking">${usuario}</span> com <span class="titleRanking">${pontuacao}</span> votos`;
+
+        
+
+    
+        for (i = 0; i < resposta.length; i++) { }
+        console.log(JSON.stringify(dados));
+
+        var ctx = myChart2.getContext("2d");
+        window.myChart2 = Chart.Bar(ctx, {
+            data: dados,
+            options: {
+                responsive: true,
+                animation: { duration: 900 },
+                hoverMode: "index",
+                stacked: false,
+                title: {
+                    display: false,
+                    text: "Ranking quiz",
+                },
+
+                scales: {
+                    yAxes: [
+                        {
+                            type: "linear",
+                            display: true,
+                            position: "left",
+                            id: "y-totalpersonagens",
+                            ticks: {
+                                beginAtZero: true,
+                                max: 7,
+                                min: 0,
+                            },
+                        },
+                        {
+                            display: false,
+                        },
+                    ],
+                },
+            },
+        });
     }
 </script>

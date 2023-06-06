@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon" />
+  <head>
+    <link
+      rel="shortcut icon"
+      href="../assets/icon/favicon2.ico"
+      type="image/x-icon"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,316 +14,600 @@
     <script src="../js/funcoes.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
+  </head>
 
-<body onload="validarSessao(), atualizacaoPeriodica()">
+  <body onload="validarSessao(), atualizacaoPeriodica()">
     <div class="janela">
-        <nav class="nav">
-            <a href="../index.html"><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt=""
-                    class="logo-nav" /></a>
-            <ul class="nav-list" id="navlist">
-                <a href="../index.html">
-                    <li class="list">Inicio</li>
-                </a>
-                <a href="../index.html#historia">
-                    <li class="list">Sobre o jogo</li>
-                </a>
-                <a href="../Tela recomendações/recomendações.html">
-                    <li class="list">Recomendações</li>
-                </a>
-                <a href="">
-                    <li class="list">
-                        <button id="navButton" onclick="limparSessao()">Sair</button>
-                    </li>
-                </a>
-            </ul>
-        </nav>
-        <div class="header dash-header">
-            <aside class="aside">
-                <div class="hello">
-                    <h3 class="title">
-                        Olá, <span id="b_usuario" class="title">usuário</span>!
-                    </h3>
-                </div>
+      <nav class="nav">
+        <a href="../index.html"
+          ><img
+            src="src/images/The-Last-Of-Us-Logo-PNG-Image.png"
+            alt=""
+            class="logo-nav"
+        /></a>
+        <ul class="nav-list" id="navlist">
+          <a href="../index.html">
+            <li class="list">Inicio</li>
+          </a>
+          <a href="../index.html#historia">
+            <li class="list">Sobre o jogo</li>
+          </a>
+          <a href="../Tela recomendações/recomendações.html">
+            <li class="list">Recomendações</li>
+          </a>
+          <a href="">
+            <li class="list">
+              <button id="navButton" onclick="limparSessao()">Sair</button>
+            </li>
+          </a>
+        </ul>
+      </nav>
+      <div class="header dash-header">
+        <aside class="aside">
+          <div class="hello">
+            <h3 class="title">
+              Olá, <span id="b_usuario" class="title">usuário</span>!
+            </h3>
+          </div>
 
-                <div class="btn-nav">
-                    <h3 class="title">Quiz</h3>
-                </div>
+          <div class="btn-nav">
+            <h3 class="title">Quiz</h3>
+          </div>
 
-                <div class="btn-nav-white">
-                    <a href="./dashboard.html" class="aSide">
-                        <h3 class="title">Gráficos</h3>
-                    </a>
-                </div>
+          <div class="btn-nav-white">
+            <a href="./dashboard.html" class="aSide">
+              <h3 class="title">Gráficos</h3>
+            </a>
+          </div>
 
-                <div class="btn-logout" onclick="limparSessao()">
-                    <h3 class="title">Sair</h3>
+          <div class="btn-logout" onclick="limparSessao()">
+            <h3 class="title">Sair</h3>
+          </div>
+        </aside>
+        <main class="main">
+          <div id="quizTitle">
+            <h1 class="title">The Last of Us Quiz</h1>
+          </div>
+          <div id="quizContainer">
+            <div id="quizQuest0" class="quizContent" style="display: block">
+              <div class="quizTitle">
+                <h2>Comece o quiz</h2>
+              </div>
+              <div class="quizOptions">
+                <button class="quizButton" onclick="avancarQuiz()">
+                  Começar
+                </button>
+              </div>
+            </div>
+            <div id="quizQuest1" class="quizContent" style="display: none">
+              <div class="quizTitle">
+                <h2>Questão 1 - Em que ano o jogo se passa?</h2>
+              </div>
+              <div class="quizOptions">
+                <div class="quizForm">
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option1"
+                    name="quest1"
+                    value="2013"
+                  />
+                  2013 <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option2"
+                    name="quest1"
+                    value="2033"
+                  />
+                  2033 <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option3"
+                    name="quest1"
+                    value="2023"
+                  />
+                  2023 <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option4"
+                    name="quest1"
+                    value="2050"
+                  />
+                  2050 <br />
                 </div>
-            </aside>
-            <main class="main">
-                <div id="quizTitle">
-                    <h1 class="title">The Last of Us Quiz</h1>
+                <button class="quizButton" onclick="avancarQuiz()">
+                  proxima questão
+                </button>
+              </div>
+            </div>
+            <div id="quizQuest2" class="quizContent" style="display: none">
+              <div class="quizTitle">
+                <h2>Questão 2 - Qual é o nome completo da Ellie?</h2>
+              </div>
+              <div class="quizOptions">
+                <div class="quizForm">
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option1"
+                    name="quest2"
+                    value="Ellie Druckmann"
+                  />
+                  Ellie Druckmann<br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option2"
+                    name="quest2"
+                    value="Ellie Miller"
+                  />
+                  Ellie Miller <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option3"
+                    name="quest2"
+                    value="Ellie Williams"
+                  />
+                  Ellie Williams <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option4"
+                    name="quest2"
+                    value="Ellie Johnson"
+                  />
+                  Ellie Johnson <br />
                 </div>
-                <div id="quizContainer">
-                    <div id="quizQuest0" class="quizContent" style="display: block">
-                        <div class="quizTitle">
-                            <h2>Comece o quiz</h2>
-                        </div>
-                        <div class="quizOptions">
-                            <button class="quizButton" onclick="avancarQuiz()">
-                                Começar
-                            </button>
-                        </div>
-                    </div>
-                    <div id="quizQuest1" class="quizContent" style="display: none">
-                        <div class="quizTitle">
-                            <h2>Questão 1 - Em que ano o jogo se passa?</h2>
-                        </div>
-                        <div class="quizOptions">
-                            <div class="quizForm">
-                                <input type="radio" class="inputRadio" id="option1" name="quest1" value="2013" />
-                                2013 <br />
-                                <input type="radio" class="inputRadio" id="option2" name="quest1" value="2033" />
-                                2033 <br />
-                                <input type="radio" class="inputRadio" id="option3" name="quest1" value="2023" />
-                                2023 <br />
-                                <input type="radio" class="inputRadio" id="option4" name="quest1" value="2050" />
-                                2050 <br />
-                            </div>
-                            <button class="quizButton" onclick="avancarQuiz()">
-                                proxima questão
-                            </button>
-                        </div>
-                    </div>
-                    <div id="quizQuest2" class="quizContent" style="display: none">
-                        <div class="quizTitle">
-                            <h2>Questão 2 - Qual é o nome completo da Ellie?</h2>
-                        </div>
-                        <div class="quizOptions">
-                            <div class="quizForm">
-                                <input type="radio" class="inputRadio" id="option1" name="quest2"
-                                    value="Ellie Druckmann" />
-                                Ellie Druckmann<br />
-                                <input type="radio" class="inputRadio" id="option2" name="quest2"
-                                    value="Ellie Miller" />
-                                Ellie Miller <br />
-                                <input type="radio" class="inputRadio" id="option3" name="quest2"
-                                    value="Ellie Williams" />
-                                Ellie Williams <br />
-                                <input type="radio" class="inputRadio" id="option4" name="quest2"
-                                    value="Ellie Johnson" />
-                                Ellie Johnson <br />
-                            </div>
-                            <button class="quizButton" onclick="avancarQuiz()">
-                                proxima questão
-                            </button>
-                        </div>
-                    </div>
-                    <div id="quizQuest3" class="quizContent" style="display: none">
-                        <div class="quizTitle">
-                            <h2>Questão 3 - Qual o local de origem do fungo Cordyceps?</h2>
-                        </div>
-                        <div class="quizOptions">
-                            <div class="quizForm">
-                                <input type="radio" class="inputRadio" id="option1" name="quest3" value="Amazonia" />
-                                Amazonia <br />
-                                <input type="radio" class="inputRadio" id="option2" name="quest3"
-                                    value="Africa do Sul" />
-                                Africa do Sul <br />
-                                <input type="radio" class="inputRadio" id="option3" name="quest3" value="Tailandia" />
-                                Tailandia <br />
-                                <input type="radio" class="inputRadio" id="option4" name="quest3"
-                                    value="Estados Unidos" />
-                                Estados Unidos <br />
-                            </div>
-                            <button class="quizButton" onclick="avancarQuiz()">
-                                proxima questão
-                            </button>
-                        </div>
-                    </div>
-                    <div id="quizQuest4" class="quizContent" style="display: none">
-                        <div class="quizTitle">
-                            <h2>Questão 4 - Em que ano a filha de Joel Morre?</h2>
-                        </div>
-                        <div class="quizOptions">
-                            <div class="quizForm">
-                                <input type="radio" class="inputRadio" id="option1" name="quest4" value="2013" />
-                                2013 <br />
-                                <input type="radio" class="inputRadio" id="option2" name="quest4" value="2033" />
-                                2033 <br />
-                                <input type="radio" class="inputRadio" id="option3" name="quest4" value="2023" />
-                                2023 <br />
-                                <input type="radio" class="inputRadio" id="option4" name="quest4" value="2050" />
-                                2050 <br />
-                            </div>
-                            <button class="quizButton" onclick="avancarQuiz()">
-                                proxima questão
-                            </button>
-                        </div>
-                    </div>
-                    <div id="quizQuest5" class="quizContent" style="display: none">
-                        <div class="quizTitle">
-                            <h2>Questão 5 - Qual o nome do parceiro do Bill?</h2>
-                        </div>
-                        <div class="quizOptions">
-                            <div class="quizForm">
-                                <input type="radio" class="inputRadio" id="option1" name="quest5" value="Frank" />
-                                Frank <br />
-                                <input type="radio" class="inputRadio" id="option2" name="quest5" value="Franklin" />
-                                Franklin <br />
-                                <input type="radio" class="inputRadio" id="option3" name="quest5" value="Will" />
-                                Will <br />
-                                <input type="radio" class="inputRadio" id="option4" name="quest5" value="Richard" />
-                                Richard <br />
-                            </div>
-                            <button class="quizButton" onclick="avancarQuiz()">
-                                proxima questão
-                            </button>
-                        </div>
-                    </div>
-                    <div id="quizQuest6" class="quizContent" style="display: none">
-                        <div class="quizTitle">
-                            <h2>Questão 6 - Qual o nome do parceiro da Abby?</h2>
-                        </div>
-                        <div class="quizOptions">
-                            <div class="quizForm">
-                                <input type="radio" class="inputRadio" id="option1" name="quest6" value="Lev" />
-                                Lev <br />
-                                <input type="radio" class="inputRadio" id="option2" name="quest6" value="Franklin" />
-                                Franklin <br />
-                                <input type="radio" class="inputRadio" id="option3" name="quest6" value="Will" />
-                                Will <br />
-                                <input type="radio" class="inputRadio" id="option4" name="quest6" value="Richard" />
-                                Richard <br />
-                            </div>
-                            <button class="quizButton" onclick="avancarQuiz()">
-                                proxima questão
-                            </button>
-                        </div>
-                    </div>
-                    <div id="quizQuest7" class="quizContent" style="display: none">
-                        <div class="quizTitle">
-                            <h2>Questão 7 - Qual o nome do criador da franquia?</h2>
-                        </div>
-                        <div class="quizOptions">
-                            <div class="quizForm">
-                                <input type="radio" class="inputRadio" id="option1" name="quest7"
-                                    value="Neil Druckmann" />
-                                Neil Druckmann <br />
-                                <input type="radio" class="inputRadio" id="option2" name="quest7"
-                                    value="Neil Armstrong" />
-                                Neil Armstrong <br />
-                                <input type="radio" class="inputRadio" id="option3" name="quest7"
-                                    value="Quentin Tarantino" />
-                                Quentin Tarantino <br />
-                                <input type="radio" class="inputRadio" id="option4" name="quest7"
-                                    value="Robert Richard" />
-                                Robert Richard <br />
-                            </div>
-                            <button class="quizButton" onclick="avancarQuiz()">
-                                Finalizar tentativa
-                            </button>
-                        </div>
-                    </div>
-                    <div id="quizQuest8" class="quizContent" style="display: none">
-                        <div class="quizTitle">
-                            <h2>Resultado</h2>
-                        </div>
-                        <div class="quizOptions">
-                            <div class="quizForm"></div>
-                            <button class="quizButton" onclick="avancarQuiz()">
-                                Tentar novamente
-                            </button>
-                        </div>
-                    </div>
+                <button class="quizButton" onclick="avancarQuiz()">
+                  proxima questão
+                </button>
+              </div>
+            </div>
+            <div id="quizQuest3" class="quizContent" style="display: none">
+              <div class="quizTitle">
+                <h2>Questão 3 - Qual o local de origem do fungo Cordyceps?</h2>
+              </div>
+              <div class="quizOptions">
+                <div class="quizForm">
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option1"
+                    name="quest3"
+                    value="Amazonia"
+                  />
+                  Amazonia <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option2"
+                    name="quest3"
+                    value="Africa do Sul"
+                  />
+                  Africa do Sul <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option3"
+                    name="quest3"
+                    value="Tailandia"
+                  />
+                  Tailandia <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option4"
+                    name="quest3"
+                    value="Estados Unidos"
+                  />
+                  Estados Unidos <br />
                 </div>
-            </main>
-        </div>
+                <button class="quizButton" onclick="avancarQuiz()">
+                  proxima questão
+                </button>
+              </div>
+            </div>
+            <div id="quizQuest4" class="quizContent" style="display: none">
+              <div class="quizTitle">
+                <h2>Questão 4 - Em que ano a filha de Joel Morre?</h2>
+              </div>
+              <div class="quizOptions">
+                <div class="quizForm">
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option1"
+                    name="quest4"
+                    value="2050"
+                  />
+                  2050 <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option2"
+                    name="quest4"
+                    value="2033"
+                  />
+                  2033 <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option3"
+                    name="quest4"
+                    value="2023"
+                  />
+                  2023 <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option4"
+                    name="quest4"
+                    value="2013"
+                  />
+                  2013 <br />
+                </div>
+                <button class="quizButton" onclick="avancarQuiz()">
+                  proxima questão
+                </button>
+              </div>
+            </div>
+            <div id="quizQuest5" class="quizContent" style="display: none">
+              <div class="quizTitle">
+                <h2>Questão 5 - Qual o nome do parceiro do Bill?</h2>
+              </div>
+              <div class="quizOptions">
+                <div class="quizForm">
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option1"
+                    name="quest5"
+                    value="Franklin"
+                  />
+                  Franklin <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option2"
+                    name="quest5"
+                    value="Frank"
+                  />
+                  Frank <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option3"
+                    name="quest5"
+                    value="Will"
+                  />
+                  Will <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option4"
+                    name="quest5"
+                    value="Richard"
+                  />
+                  Richard <br />
+                </div>
+                <button class="quizButton" onclick="avancarQuiz()">
+                  proxima questão
+                </button>
+              </div>
+            </div>
+            <div id="quizQuest6" class="quizContent" style="display: none">
+              <div class="quizTitle">
+                <h2>Questão 6 - Qual o nome do parceiro da Abby?</h2>
+              </div>
+              <div class="quizOptions">
+                <div class="quizForm">
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option1"
+                    name="quest6"
+                    value="Lev"
+                  />
+                  Lev <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option2"
+                    name="quest6"
+                    value="Cleiton"
+                  />
+                  Cleiton <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option3"
+                    name="quest6"
+                    value="Bett"
+                  />
+                  Bett <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option4"
+                    name="quest6"
+                    value="Ronald"
+                  />
+                  Ronald <br />
+                </div>
+                <button class="quizButton" onclick="avancarQuiz()">
+                  proxima questão
+                </button>
+              </div>
+            </div>
+            <div id="quizQuest7" class="quizContent" style="display: none">
+              <div class="quizTitle">
+                <h2>Questão 7 - Qual o nome do criador da franquia?</h2>
+              </div>
+              <div class="quizOptions">
+                <div class="quizForm">
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option1"
+                    name="quest7"
+                    value="Neil Druckmann"
+                  />
+                  Neil Druckmann <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option2"
+                    name="quest7"
+                    value="Neil Armstrong"
+                  />
+                  Neil Armstrong <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option3"
+                    name="quest7"
+                    value="Quentin Tarantino"
+                  />
+                  Quentin Tarantino <br />
+                  <input
+                    type="radio"
+                    class="inputRadio"
+                    id="option4"
+                    name="quest7"
+                    value="Robert Richard"
+                  />
+                  Robert Richard <br />
+                </div>
+                <button class="quizButton" onclick="avancarQuiz()">
+                  Finalizar tentativa
+                </button>
+              </div>
+            </div>
+            <div id="quizQuest8" class="quizContent" style="display: none">
+              <div class="quizTitle">
+                <h2>Resultado</h2>
+              </div>
+              <div class="quizOptions">
+                <div class="quizForm"></div>
+                <button class="quizButton" onclick="avancarQuiz()">
+                  Tentar novamente
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
     <!--footer inicio-->
     <footer class="footer">
-        <div class="nav-footer">
-            <a href=""><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt="" class="logo-nav" /></a>
+      <div class="nav-footer">
+        <a href=""
+          ><img
+            src="src/images/The-Last-Of-Us-Logo-PNG-Image.png"
+            alt=""
+            class="logo-nav"
+        /></a>
 
-            <p id="footer-message">
-                Feito com <span id="heart-footer">&#10084;</span> por
-                <a href="https://github.com/vitoramosc">Vitor Ramos</a>
-            </p>
-            <a href="#"><img src="src/images/ellieSpaceship.png" alt="" id="ellie-spaceship" /></a>
-        </div>
+        <p id="footer-message">
+          Feito com <span id="heart-footer">&#10084;</span> por
+          <a href="https://github.com/vitoramosc">Vitor Ramos</a>
+        </p>
+        <a href="#"
+          ><img src="src/images/ellieSpaceship.png" alt="" id="ellie-spaceship"
+        /></a>
+      </div>
     </footer>
     <!--footer fim-->
-</body>
+  </body>
 
-<script>
-    var pontuaçãoJogador = 0;
+  <script>
+    var pontuacaoJogador = 0;
     var contador = 0;
     var gabaritoQuiz = [
-        "2023",
-        "Ellie Williams",
-        "Amazonia",
-        "2013",
-        "Frank",
-        "Lev",
-        "Neil Druckmann",
+      "2033",
+      "Ellie Williams",
+      "Amazonia",
+      "2013",
+      "Frank",
+      "Lev",
+      "Neil Druckmann",
     ];
     var jogadasQuiz = [];
-
-    function checarJogada() { }
     function avancarQuiz() {
-        if (contador > 0) {
-            if (
-                document.getElementById("option1").checked == false &&
-                document.getElementById("option2").checked == false &&
-                document.getElementById("option3").checked == false &&
-                document.getElementById("option4").checked == false
-            ) {
-                contador -= 1;
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops, você não selecionou uma resposta",
-                    text: "Clique em Ok e Selecione uma opção!",
-                    footer: '<a href="">Why do I have this issue?</a>',
-                });
-            } else {
-                var opcaoSelecionada = document.querySelector(
-                    `input[name="quest${contador}"]:checked`
-                ).value;
-                jogadasQuiz.push(opcaoSelecionada);
-            }
-
-            //checarJogada()
+      if (contador > 0) {
+        if (
+          document.getElementById("option1").checked == false &&
+          document.getElementById("option2").checked == false &&
+          document.getElementById("option3").checked == false &&
+          document.getElementById("option4").checked == false
+        ) {
+          contador -= 1;
+          Swal.fire({
+            icon: "error",
+            title: "Oops, você não selecionou uma resposta",
+            text: "Clique em Ok e Selecione uma opção!",
+            footer: '<a href="">Why do I have this issue?</a>',
+          });
+        } else {
+          var opcaoSelecionada = document.querySelector(
+            `input[name="quest${contador}"]:checked`
+          ).value;
+          console.log(opcaoSelecionada);
+          jogadasQuiz.push(opcaoSelecionada);
         }
-        document.getElementById(`quizQuest${contador}`).style.display = "none";
-        contador++;
-        document.getElementById(`quizQuest${contador}`).style.display = "block";
-        finalizarPartida();
+
+        //checarJogada()
+      }
+      document.getElementById(`quizQuest${contador}`).style.display = "none";
+      contador++;
+      document.getElementById(`quizQuest${contador}`).style.display = "block";
+      finalizarPartida();
     }
     function parabenizarJogador() {
-        Swal.fire(
-            "Muito bem!",
-            `Você acertou ${pontuaçãoJogador} de ${gabaritoQuiz.length}!`,
-            "success"
-        );
+      Swal.fire(
+        "Muito bem!",
+        `Você acertou ${pontuacaoJogador} de ${gabaritoQuiz.length}!`,
+        "success"
+      );
     }
 
     function finalizarPartida() {
-        if (contador >= 8) {
-            contador = 0;
-            for (var i = 0; i < jogadasQuiz.length; i++) {
-                if (jogadasQuiz[i] == gabaritoQuiz[i]) {
-                    pontuaçãoJogador++;
-                }
-            }
-            parabenizarJogador();
+      if (contador >= 8) {
+        contador = 0;
+        for (var i = 0; i < jogadasQuiz.length; i++) {
+          if (jogadasQuiz[i] == gabaritoQuiz[i]) {
+            pontuacaoJogador++;
+          }
         }
-        if (contador == 1) {
-            document.getElementById(`quizQuest8`).style.display = "none";
-        }
-    }
-</script>
+        parabenizarJogador();
+        var fk_usuario = sessionStorage.ID_USUARIO;
+        var idUsuario = sessionStorage.ID_USUARIO;
 
+        fetch(`/medidas/checar/${idUsuario}`)
+          .then(function (resultado) {
+            console.log("resultado", resultado);
+            if (resultado.ok) {
+              if (resultado.status == 204) {
+                fetch("/medidas/pontuacao/", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    pontuacaoServer: pontuacaoJogador,
+                    fkUsuarioServer: fk_usuario,
+                  }),
+                })
+                  .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+                    if (resposta.ok) {
+                      setTimeout(() => {
+                        window.location = "../dashboard/dashboard.html";
+                      }, "2000");
+
+                      limparFormulario();
+                      finalizarAguardar();
+                    } else {
+                      throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                  })
+                  .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                  });
+              } else {
+                resultado.json().then(function (resultado2) {
+                  fetch("/medidas/atualizarQuiz", {
+                    method: "PUT",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      pontuacaoServer: pontuacaoJogador,
+                      idQuizServer: resultado2[0].idQuiz,
+                    }),
+                  })
+                    .then(function (resposta) {
+                      console.log("resposta: ", resposta);
+                      if (resposta.ok) {
+                        setTimeout(() => {
+                          window.location = "../dashboard/dashboard.html";
+                        }, "2000");
+
+                        limparFormulario();
+                        finalizarAguardar();
+                      } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                      }
+                    })
+                    .catch(function (resposta) {
+                      console.log(`#ERRO: ${resposta}`);
+                    });
+                });
+              }
+            } else {
+              console.log("erro na requisição");
+            }
+          })
+          .catch(function (erro) {
+            console.log(erro);
+          });
+
+        return false;
+      }
+
+      // fetch("/medidas/pontuacao/", {
+      //     method: "POST",
+      //     headers: {
+      //         "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //         // crie um atributo que recebe o valor recuperado aqui
+      //         // Agora vá para o arquivo routes/usuario.js
+      //         pontuacaoServer: pontuacaoJogador,
+      //         fkUsuarioServer: fk_usuario
+      //     }),
+      // })
+      //             .then(function (resposta) {
+      //                 console.log("resposta: ", resposta);
+
+      //                 if (resposta.ok) {
+      //                     //cardErro.style.display = "block";
+
+      //                     //mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+      //                     setTimeout(() => {
+      //                         window.location = "../dashboard/dashboard.html";
+      //                     }, "2000");
+
+      //                     limparFormulario();
+      //                     finalizarAguardar();
+      //                 } else {
+      //                     throw "Houve um erro ao tentar realizar o cadastro!";
+      //                 }
+      //             })
+      //             .catch(function (resposta) {
+      //                 console.log(`#ERRO: ${resposta}`);
+      //                 // finalizarAguardar();
+      //             });
+
+      //         return false;
+      //         console.log(erro);
+      //     };
+
+      //     return false;
+    }
+    if (contador == 1) {
+      document.getElementById(`quizQuest8`).style.display = "none";
+    }
+  </script>
 </html>

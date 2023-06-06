@@ -262,8 +262,19 @@ a:visited {
     height: 100%;
 }
 
-#rankingFinal {
+#rankingFinal{
     text-align: center;
+    font-size: medium
+}
+#rankingFinal2 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: medium
+}
+
+.titleGraph{
+    font-size: 24px;
+    margin-top: 10px;
 }
 
 .titleRanking {
@@ -273,7 +284,6 @@ a:visited {
 .slides-list {
     background-color: #FFFFFF;
     border-radius: 15px;
-    margin-top: 20px;
 }
 
 /* Graficos fim */

@@ -77,27 +77,31 @@
             </aside>
 
             <div id="contentChart">
-                <div>
-                    <h2 id="rankingFinal"></h2>
+                <div id="votosPersonagens">
+                    <div>
+                        <h2 id="rankingFinal"></h2>
+                    </div>
+                    <div class="slide-show select-disable">
+                        <h2 class="titleGraph">Ranking dos personagens mais votados</h2>
+                        <ul class="slides-list">
+                            <li class="slide">
+                                <canvas id="myChart"></canvas>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="slide-show select-disable">
-                    <h2 class="titleGraph">Ranking dos personagens mais votados</h2>
-                    <ul class="slides-list">
-                        <li class="slide">
-                            <canvas id="myChart"></canvas>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 id="rankingFinal2"></h2>
-                </div>
-                <div class="slide-show select-disable">
-                    <h2 class="titleGraph">Ranking do quiz</h2>
-                    <ul class="slides-list">
-                        <li class="slide">
-                            <canvas id="myChart2"></canvas>
-                        </li>
-                    </ul>
+                <div id="votosQuiz">
+                    <div>
+                        <h2 id="rankingFinal2"></h2>
+                    </div>
+                    <div class="slide-show select-disable">
+                        <h2 class="titleGraph">Ranking do quiz</h2>
+                        <ul class="slides-list">
+                            <li class="slide">
+                                <canvas id="myChart2"></canvas>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -208,8 +212,8 @@
             }
         }
         rankingFinal.innerHTML = `
-        O personagem mais votado é: <span class="titleRanking">${personagem}</span> com <span class="titleRanking">${personagemMaisVotado}</span> votos <br>
-        O personagem menos votado é: <span class="titleRanking">${personagemMenos}</span> com <span class="titleRanking">${personagemMenosVotado}</span> votos
+        <div class="indicador">O personagem mais votado é:<span class="titleRanking">${personagem}</span> <div>com <span class="titleRanking">${personagemMaisVotado}</span> votos</div></div> <br>
+        <div class="indicador">O personagem menos votado é: <span class="titleRanking">${personagemMenos}</span> <div>com <span class="titleRanking">${personagemMenosVotado}</span> votos</div></div>
 
         `;
 
@@ -341,9 +345,11 @@
                 usuarioMenor = registro.nome;
             }
         }
+
+        
         rankingFinal2.innerHTML = `
-        O usuário que mais acertou no quiz é o: <span class="titleRanking">${usuario}</span> com <span class="titleRanking">${pontuacao}</span> acertos <br>
-        O usuário que menos acertou no quiz é o: <span class="titleRanking">${usuarioMenor}</span> com <span class="titleRanking">${pontuacaoMenor}</span> acertos
+        <div class="indicador">O usuário que mais acertou no quiz é o: <span class="titleRanking">${usuario}</span> <div>com <span class="titleRanking">${pontuacao}</span> acertos</div></div> <br>
+        <div class="indicador">O usuário que menos acertou no quiz é o: <span class="titleRanking">${usuarioMenor}</span> <div>com <span class="titleRanking">${pontuacaoMenor}</span> acertos</div></div>
 
         `;
 

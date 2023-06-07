@@ -30,7 +30,7 @@
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
 </head>
 
-<body onload=" atualizarFeed()">
+<body onload="validarSessao(), atualizarFeed(), atualizacaoPeriodica()">
     <div class="janela">
         <nav class="nav">
             <a href="../index.html"><img src="src/images/The-Last-Of-Us-Logo-PNG-Image.png" alt=""
@@ -45,9 +45,9 @@
                 <a href="../Tela recomendações/recomendações.html">
                     <li class="list">Recomendações</li>
                 </a>
-                <a href="">
+                <a href="../login.html">
                     <li class="list">
-                        <button id="navButton" onclick="limparSessao()">Sair</button>
+                        <button id="navButton" onclick="telaInicial()">Sair</button>
                     </li>
                 </a>
             </ul>
@@ -181,23 +181,39 @@
                 },
             ],
         };
-        var personagemMaisVotado = [];
-        var votos = 0;
+        var personagemMaisVotado = 0;
+        
         var personagem = "";
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             dados.labels.push(registro.personagem);
             // dados.datasets[0].data.push(registro.personagem);
             dados.datasets[0].data.push(registro.voto);
-            if (registro.voto >= votos) {
-                var votos = registro.voto;
+            if (registro.voto >= personagemMaisVotado) {
+                personagemMaisVotado = registro.voto;
                 var personagem = registro.personagem;
             }
         }
+        var personagemMenos = "";
+        var personagemMenosVotado = personagemMaisVotado
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            // dados.labels.push(registro.personagem);
+            // dados.datasets[0].data.push(registro.personagem);
+            // dados.datasets[0].data.push(registro.voto);
+            
+            if (Number(registro.voto) < personagemMenosVotado) {
+                personagemMenosVotado = registro.voto;
+                var personagemMenos = registro.personagem;
+            }
+        }
+        rankingFinal.innerHTML = `
+        O personagem mais votado é: <span class="titleRanking">${personagem}</span> com <span class="titleRanking">${personagemMaisVotado}</span> votos <br>
+        O personagem menos votado é: <span class="titleRanking">${personagemMenos}</span> com <span class="titleRanking">${personagemMenosVotado}</span> votos
 
-        rankingFinal.innerHTML = `O personagem mais votado é: <span class="titleRanking">${personagem}</span> com <span class="titleRanking">${votos}</span> votos`;
+        `;
 
-        console.log(`=======${votos},${personagem}=======`);
+        console.log(`=======${personagemMaisVotado},${personagem}=======`);
         for (i = 0; i < resposta.length; i++) { }
         console.log(JSON.stringify(dados));
 
@@ -279,13 +295,27 @@
                         "#A81B1B",
                         "#A81B1B",
                         "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        "#A81B1B",
+                        
                     ],
                     fill: true,
                     data: [],
                 },
             ],
         };
-        var personagemMaisVotado = [];
         var pontuacao = 0;
         var usuario = "";
         for (i = 0; i < resposta.length; i++) {
@@ -298,7 +328,24 @@
                 usuario = registro.nome;
             }
         }
-        rankingFinal2.innerHTML = `O usuário que mais acertou no quiz é o: <span class="titleRanking">${usuario}</span> com <span class="titleRanking">${pontuacao}</span> votos`;
+        var pontuacaoMenor = pontuacao;
+        var usuarioMenor = "";
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            // dados.labels.push(registro.personagem);
+            // dados.datasets[0].data.push(registro.personagem);
+            // dados.datasets[0].data.push(registro.voto);
+            
+            if (registro.acertos <= pontuacaoMenor) {
+                pontuacaoMenor = registro.acertos;
+                usuarioMenor = registro.nome;
+            }
+        }
+        rankingFinal2.innerHTML = `
+        O usuário que mais acertou no quiz é o: <span class="titleRanking">${usuario}</span> com <span class="titleRanking">${pontuacao}</span> acertos <br>
+        O usuário que menos acertou no quiz é o: <span class="titleRanking">${usuarioMenor}</span> com <span class="titleRanking">${pontuacaoMenor}</span> acertos
+
+        `;
 
         
 
@@ -339,5 +386,10 @@
                 },
             },
         });
+    }
+
+    function telaInicial(){
+        limparSessao()
+        window.location = `../login.html`
     }
 </script>

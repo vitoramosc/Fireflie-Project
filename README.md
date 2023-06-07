@@ -1,4 +1,4 @@
-<h1 align="center"> Fireflie Project </h1>
+<h1 align="center"> Firefly Project </h1>
 <p align="center">
     <img src="src/images/ellieSpaceship.png" height="128">
 </p>
